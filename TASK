@@ -1,0 +1,90 @@
+The second assignment is to build a simple retrieval system.
+
+General Information
+
+
+
+Your program should be written in Java.
+As in the previous assignment, common libs are allowed (e.g. the Weka API for reading ARFF files).
+In case you're not sure whether or not to use a particular library, please again, ask in TUWEL forum.
+Apart from that, implementation details as well as infrastructure are, basically, up to you.
+
+
+
+Your submission shall include
+- the program (incl. all its dependencies, e.g. libraries)
+- A short README on how to start it
+- a report that documents the results and findings from this assignment. Use a value of 10 for k (the number of returned results) in your experiments
+
+
+Retrieval System task
+
+
+
+Your system should be able to perform similarity retrieval from a given document (indicated by the name of the file), i.e., find the k most similar documents.
+Your system should be able to utilise multiple indices describing the same dataset, i.e., retrieve a list of similar documents based on each index used, and present the retrieval results to the user in a compact form (i.e., not simply displaying all lists after each other).
+Your output can be ASCII directly in the console, or an HTML file (which will allow you easier formatting of tables, ...)
+
+Besides the names of the documents, also the distance to the query documents shall be displayed.
+
+Finally, you should perform some basic statistical analysis on the different result lists.
+For each document in any of the result lists, compute
+- the sum of occurrences in all lists produced by the different indices
+- the average rank
+- the average distance.
+
+
+Your program should take as parameters:
+
+- the indices to be used, as a (comma-separated) list of filenames.
+If no parameter is passed, all the .arff(.gz) files in the current directory should be used
+
+- the names of the query documents, again a list of documents shall be possible
+
+- the number k of to-be-retrieved documents.
+
+- the similarity function to be used for similarity retrieval; each group shall use the L2 (Euclidean) metric, and the other distance to use (L1, cosine, ..) will depend on the group you apply to.
+
+The group will also determine the list of documents you shall perform the retrieval for and report your results on.
+
+
+
+The ARFF files will be available by Thursday March 31st; in the meantime, please use your output from the first exercise.
+
+Analysis of Results
+
+
+An important part of this assignment is that you perform an analysis of the results you obtain with your retrieval system. Interpret the differences you obtain in the retrieved documents when using different text indices, and when using different metrics.
+Provide the output of your retrieval systems in the report to back up your findings.
+
+Bonus Task
+
+
+You can gain bonus points for an additional task and analysis.
+
+The task is to extend your system to retrieve documents based on a user query. As you don't have a component to index a real (short) user query, you shall 'simulate' such a query. 
+
+To this end, take the same document vectors as used for the retrieval in the main part of this exercise, and modify/treat it as binary representation (or use the idf values you obtained from your indexing to weigh them, if you did that in your first exercise)
+
+Then, as in the main part of this exercise, retrieve the top-k documents, calculate statistics, and specifically compare the differences of the binary vs. the weighted vs. the similarity retrieval performed in the main part of this exercise. 
+
+You need to perform this experiment and evaluation with one selected setting of features only; the important part in this task is not the implementation, but a thorough experimentation and analysis.
+
+Resources
+
+
+
+ARFF feature files
+https://tuwel.tuwien.ac.at/file.php/2927/features_20news.zip
+https://tuwel.tuwien.ac.at/file.php/2927/features_banksearch.zip
+
+Queries:
+Queries1:
+20-newsgroups: comp.graphics/38863 talk.politics.guns/55082 soc.religion.christian/21409 talk.politics.mideast/76075 sci.med/59297 talk.politics.guns/54831 rec.sport.baseball/104988 sci.crypt/15879 misc.forsale/76937 sci.crypt/16074 
+
+banksearch: A/A0020.txt B/B0414.txt C/C0259.txt D/D0615.txt E/E0853.txt F/F0274.txt 
+
+Queries2: 
+20-newsgroups: comp.sys.ibm.pc.hardware/60539 soc.religion.christian/21697 soc.religion.christian/21784 comp.windows.x/68253 soc.religion.christian/20954 talk.politics.misc/178611 rec.sport.hockey/54751 talk.politics.mideast/75936 sci.electronics/54337 rec.autos/101611 
+
+banksearch: A/A0934.txt B/B0391.txt C/C0886.txt D/D0506.txt E/E0105.txt F/F0131.txt 
