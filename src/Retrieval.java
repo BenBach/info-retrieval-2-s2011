@@ -1,22 +1,40 @@
+import com.google.common.collect.HashMultimap;
 import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
-import weka.core.Instance;
-import weka.core.Instances;
+import weka.core.*;
 import weka.core.converters.ConverterUtils;
 
-import javax.management.Attribute;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.Enumeration;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Retrieval {
     public enum SimilarityMeasure {
         L1,
         L2
+    }
+
+    public static class Similarity {
+        private double distance;
+        private Instance instance;
+
+        public Similarity(double distance, Instance instance) {
+            this.distance = distance;
+            this.instance = instance;
+        }
+
+        public double getDistance() {
+            return distance;
+        }
+
+        public Instance getInstance() {
+            return instance;
+        }
     }
 
     @Option(name = "-i", aliases = {"--index"}, multiValued = true, required = false, usage = "the indices to be used")
@@ -32,10 +50,24 @@ public class Retrieval {
 
     public void run() throws Exception {
         setupIndices();
+
+        DistanceFunction distanceFunction = null;
+        switch (similarityMeasure) {
+            case L1:
+                distanceFunction = new ManhattanDistance();
+                break;
+            case L2:
+                distanceFunction = new EuclideanDistance();
+                break;
+            default:
+                System.out.println("unknown similarity measure");
+                System.exit(1);
+        }
+
         printProgramStatus();
 
         for (File indexFile : indicesUsed) {
-            System.out.println("\n\n-------- Dataset: " + indexFile + " ---------");
+            System.out.println("\n\n-------- Index: " + indexFile + " ---------");
 
             // Prepare Data
             ConverterUtils.DataSource source = new ConverterUtils.DataSource(indexFile.toURI().toURL().toString());
@@ -48,27 +80,55 @@ public class Retrieval {
             while (attributes.hasMoreElements()) {
                 Attribute attribute = (Attribute) attributes.nextElement();
 
-                if(classAttribute == null && attribute.getName().matches(".*[Cc]lass.*"))
+                if (classAttribute == null && attribute.name().matches(".*[Cc]lass.*"))
                     classAttribute = attribute;
 
-                if(documentAttribute == null && attribute.getName().matches(".*[Dd]ocument.*"))
+                if (documentAttribute == null && attribute.name().matches(".*[Dd]ocument.*"))
                     documentAttribute = attribute;
 
-                if(documentAttribute != null && classAttribute != null) break;
+                if (documentAttribute != null && classAttribute != null) break;
             }
 
-            if(classAttribute == null) {
+            if (classAttribute == null) {
                 System.err.println("No class attribute found for index " + indexFile);
                 System.err.println("Aborting");
                 System.exit(1);
             }
 
-            if(documentAttribute == null) {
+            if (documentAttribute == null) {
                 System.err.println("No document attribute found for index " + indexFile);
                 System.err.println("Aborting");
                 System.exit(1);
             }
 
+            List<Instance> documentVectors = new LinkedList<Instance>();
+
+            Enumeration instances = indexInstances.enumerateInstances();
+            while (instances.hasMoreElements()) {
+                Instance instance = (Instance) instances.nextElement();
+
+                String document = instance.toString(documentAttribute);
+
+                if (!queryDocuments.contains(document)) continue;
+
+                documentVectors.add(instance);
+            }
+
+            com.google.common.collect.Multimap<Instance, Similarity> similarities = HashMultimap.create();
+            instances = indexInstances.enumerateInstances();
+            while (instances.hasMoreElements()) {
+                Instance instance = (Instance) instances.nextElement();
+
+                for (Instance documentVector : documentVectors) {
+                    // skip same document
+                    if (documentVector.toString(documentAttribute).equals(instance.toString(documentAttribute)))
+                        continue;
+
+                    double distance = distanceFunction.distance(documentVector, instance);
+
+                    similarities.put(documentVector, new Similarity(distance, instance));
+                }
+            }
         }
     }
 
