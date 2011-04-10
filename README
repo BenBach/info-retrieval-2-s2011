@@ -25,7 +25,7 @@ options:
     QUERIES
           if -q is not used all remaining arguments are treated as documents for retrieval.
 
-it is advised that the JVM memory limit is increased with the "-Xmx" paramter (e.g. -Xmx2048M)
+for the bank corpus it is advised that the JVM memory limit is increased with the "-Xmx" paramter (e.g. -Xmx2048M)
 
 example call for document retrieval:
 
