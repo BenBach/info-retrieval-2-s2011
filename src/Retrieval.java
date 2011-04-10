@@ -2,6 +2,8 @@ import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
+
+import weka.core.Attribute;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils;
@@ -12,7 +14,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-<<<<<<<HEAD
+
 
 public class Retrieval {
     public enum SimilarityMeasure {
@@ -41,10 +43,21 @@ public class Retrieval {
             // Prepare Data
             ConverterUtils.DataSource source = new ConverterUtils.DataSource(dataPath.getAbsolutePath());
             Instances data = source.getDataSet();
-
-            if (data.classIndex() == -1) {
-                data.setClassIndex(data.numAttributes() - 1);
+            
+            for(int c = 0; c < data.numAttributes(); c++)
+            {
+            	Attribute attribute = data.attribute(c);
+            	
+            	if(attribute.name().contains("class"))
+            	{
+                    if (data.classIndex() == -1) 
+                    {
+                        data.setClassIndex(c);
+                    }
+            	}
             }
+
+
 
             // run algorithms
             System.out.println("--- Running Similarity function ---");
