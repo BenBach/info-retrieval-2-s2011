@@ -81,6 +81,68 @@ public class Retrieval {
     private Attribute classAttribute = null;
     private Attribute documentAttribute = null;
 
+    @Option(name = "-q", aliases = {"--query"}, multiValued = true, required = false, usage = "the query to be used")
+    private List<String> queryWords;
+    
+    public void query() throws Exception
+    {
+    	setupIndices();
+    	
+    	
+        // index -> document -> similarity
+        Multimap<String, DocumentSimilarity> similarities = HashMultimap.create();
+        
+        for (File indexFile : indices) 
+        {
+            ConverterUtils.DataSource source = new ConverterUtils.DataSource(indexFile.getAbsolutePath());
+            Instances indexInstances = source.getDataSet();
+        	
+            
+            Enumeration attributes = indexInstances.enumerateAttributes();
+            while (attributes.hasMoreElements()) {
+                Attribute attribute = (Attribute) attributes.nextElement();
+
+                if (classAttribute == null && attribute.name().matches(".*[Cc]lass.*"))
+                    classAttribute = attribute;
+
+                if (documentAttribute == null && attribute.name().matches(".*[Dd]ocument.*"))
+                    documentAttribute = attribute;
+
+                if (documentAttribute != null && classAttribute != null) break;
+            }
+
+            if (classAttribute == null) {
+                System.err.println("No class attribute found for index " + indexFile);
+                System.err.println("Aborting");
+                System.exit(1);
+            }
+
+            if (documentAttribute == null) {
+                System.err.println("No document attribute found for index " + indexFile);
+                System.err.println("Aborting");
+                System.exit(1);
+            }
+            
+            Instance queryVektor = new Instance(indexInstances.numAttributes());
+            attributes = indexInstances.enumerateAttributes();
+            while (attributes.hasMoreElements()) {
+                Attribute attribute = (Attribute) attributes.nextElement();
+
+                for(String queryWord : queryWords)
+                {
+                    if (attribute.name().matches(queryWord))
+                    {
+                    	queryVektor.setValue(attribute, 1);
+                    }
+                    else
+                    {
+                    	queryVektor.setValue(attribute, 0);
+                    }
+                }             
+            }
+        }
+    }
+    
     public void run() throws Exception {
         setupIndices();
         printProgramStatus();
@@ -272,7 +334,8 @@ public class Retrieval {
             System.exit(1);
         }
 
-        retrieval.run();
+        //retrieval.run();
+        retrieval.query();
     }
 
 }
