@@ -1,4 +1,9 @@
 
+attribute detection:
+the first attribute containing class/Class is used as class attribute
+the first attribute containing document/Document is used as document attribute
+if no attribute matching class/Class or document/Document is found the run is aborted.
+
 run with:
     java -jar retrieval.jar
 
@@ -20,7 +25,7 @@ options:
     QUERIES
           if -q is not used all remaining arguments are treated as documents for retrieval.
 
-it is advised that the JVM memory limit is increased with the "-Xmx" paramter (e.g. -Xmx2048M)
+for the bank corpus it is advised that the JVM memory limit is increased with the "-Xmx" paramter (e.g. -Xmx2048M)
 
 example call for document retrieval:
 
@@ -28,4 +33,4 @@ example call for document retrieval:
 
 example call for document retrieval with query:
 
-    java -jar retrieval.jar -i "arff/news_*grams*" -q "word"
+    java -jar retrieval.jar -i "arff/news_*grams*" -q word1 word2
