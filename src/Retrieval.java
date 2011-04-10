@@ -8,7 +8,6 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils;
 
-//import javax.management.Attribute;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.Arrays;
@@ -58,10 +57,10 @@ public class Retrieval {
                 Attribute attribute = (Attribute) attributes.nextElement();
 
 
-                if(classAttribute == null && attribute.getName().matches(".*[Cc]lass.*"))
+                if(classAttribute == null && attribute.name().matches(".*[Cc]lass.*"))
                     classAttribute = attribute;
 
-                if(documentAttribute == null && attribute.getName().matches(".*[Dd]ocument.*"))
+                if(documentAttribute == null && attribute.name().matches(".*[Dd]ocument.*"))
                     documentAttribute = attribute;
 
                 if(documentAttribute != null && classAttribute != null) break;
