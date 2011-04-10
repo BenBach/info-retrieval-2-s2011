@@ -31,7 +31,7 @@ public class Retrieval {
         }
     }
 
-    public static class DocumentSimilarity {
+    public static class DocumentSimilarity implements Comparable<DocumentSimilarity> {
         private double distance;
         private String sourceDocument;
         private String targetDocument;
@@ -59,6 +59,11 @@ public class Retrieval {
         public String getIndex() {
             return index;
         }
+
+        @Override
+        public int compareTo(DocumentSimilarity o) {
+            return Double.compare(distance, o.distance);
+        }
     }
 
     @Option(name = "-i", aliases = {"--index"}, multiValued = true, required = false, usage = "the indices to be used")
@@ -79,6 +84,7 @@ public class Retrieval {
         setupIndices();
         printProgramStatus();
 
+        // index -> document -> similarity
         Multimap<String, DocumentSimilarity> similarities = HashMultimap.create();
 
         for (File indexFile : indices) {
@@ -125,6 +131,9 @@ public class Retrieval {
 
             similarityMeasure.getDistanceFunction().setInstances(indexInstances);
 
+            // document -> similarity
+            Multimap<String, DocumentSimilarity> similaritiesForIndex = HashMultimap.create();
+
             // calculate distance to all other documents in the index file
             instances = indexInstances.enumerateInstances();
             while (instances.hasMoreElements()) {
@@ -139,22 +148,26 @@ public class Retrieval {
 
                     double distance = similarityMeasure.getDistanceFunction().distance(queryInstance, instance);
 
-                    similarities.put(queryInstanceName, new DocumentSimilarity(distance, queryInstanceName,
+                    similaritiesForIndex.put(queryInstanceName, new DocumentSimilarity(distance, queryInstanceName,
                             instanceName, indexFile.getName()));
                 }
 
-                trimMatchesToSizeK(similarities);
+                trimMatchesToSizeK(similaritiesForIndex);
             }
 
-            trimMatchesToSizeK(similarities);
+            trimMatchesToSizeK(similaritiesForIndex);
+
+            similarities.putAll(similaritiesForIndex);
         }
 
         for (String queryDocument : similarities.keySet()) {
             Collection<DocumentSimilarity> similarityCollection = similarities.get(queryDocument);
+            List<DocumentSimilarity> similarityList = Lists.newArrayList(similarityCollection);
+            Collections.sort(similarityList);
 
             System.out.println("\nMatches for " + queryDocument);
 
-            for (DocumentSimilarity documentSimilarity : similarityCollection) {
+            for (DocumentSimilarity documentSimilarity : similarityList) {
                 System.out.println(String.format("%-40.40s % 15.5f %-33.33s", documentSimilarity.getTargetDocument(),
                         documentSimilarity.getDistance(), documentSimilarity.getIndex()));
             }
@@ -164,6 +177,9 @@ public class Retrieval {
     private void trimMatchesToSizeK(Multimap<String, DocumentSimilarity> similarities) {
         for (String queryDocument : queryDocuments) {
             Collection<DocumentSimilarity> similarityCollection = similarities.get(queryDocument);
+
+            if(similarityCollection.size() <= k) return;
+
             List<DocumentSimilarity> similarityList = Lists.newArrayList(similarityCollection);
 
             Collections.sort(similarityList, new Comparator<DocumentSimilarity>() {
@@ -213,7 +229,7 @@ public class Retrieval {
                 String[] fileNames = directoryScanner.getIncludedFiles();
 
                 for (String fileName : fileNames) {
-                    if(!fileName.endsWith(".arff") && !fileName.endsWith(".arrf.gz")) continue;
+                    if (!fileName.endsWith(".arff") && !fileName.endsWith(".arrf.gz")) continue;
 
                     indices.add(new File(fileName));
                 }
