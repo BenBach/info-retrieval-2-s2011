@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.util.*;
 
+
 public class Retrieval {
     public enum SimilarityMeasure {
         L1(new ManhattanDistance()),
@@ -394,4 +395,5 @@ public class Retrieval {
 
         retrieval.run();
     }
+
 }
