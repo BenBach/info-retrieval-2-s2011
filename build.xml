@@ -5,6 +5,7 @@
         <pathelement location="lib/args4j-2.0.16.jar"/>
         <pathelement location="lib/weka.jar"/>
         <pathelement location="lib/guava-r09.jar"/>
+        <pathelement location="lib/ant.jar"/>
     </path>
     <target name="clean">
         <delete dir="build"/>
