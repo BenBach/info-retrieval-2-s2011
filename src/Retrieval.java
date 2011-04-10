@@ -1,4 +1,6 @@
 import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
 import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
@@ -8,37 +10,56 @@ import weka.core.converters.ConverterUtils;
 
 import java.io.File;
 import java.io.FilenameFilter;
-import java.util.Arrays;
-import java.util.Enumeration;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Retrieval {
     public enum SimilarityMeasure {
-        L1,
-        L2
+        L1(new ManhattanDistance()),
+        L2(new EuclideanDistance());
+
+        private DistanceFunction distanceFunction;
+
+        SimilarityMeasure(DistanceFunction distanceFunction) {
+            this.distanceFunction = distanceFunction;
+        }
+
+        public DistanceFunction getDistanceFunction() {
+            return distanceFunction;
+        }
     }
 
-    public static class Similarity {
+    public static class DocumentSimilarity {
         private double distance;
-        private Instance instance;
+        private String sourceDocument;
+        private String targetDocument;
+        private String index;
 
-        public Similarity(double distance, Instance instance) {
+        public DocumentSimilarity(double distance, String sourceDocument, String targetDocument, String index) {
             this.distance = distance;
-            this.instance = instance;
+            this.sourceDocument = sourceDocument;
+            this.targetDocument = targetDocument;
+            this.index = index;
         }
 
         public double getDistance() {
             return distance;
         }
 
-        public Instance getInstance() {
-            return instance;
+        public String getSourceDocument() {
+            return sourceDocument;
+        }
+
+        public String getTargetDocument() {
+            return targetDocument;
+        }
+
+        public String getIndex() {
+            return index;
         }
     }
 
     @Option(name = "-i", aliases = {"--index"}, multiValued = true, required = false, usage = "the indices to be used")
-    private List<File> indicesUsed;
+    private List<File> indices;
     @Argument(multiValued = true, required = true, index = 0, usage = "the names of the query documents",
             metaVar = "QUERY")
     private List<String> queryDocuments;
@@ -47,34 +68,19 @@ public class Retrieval {
     @Option(name = "-m", aliases = {"--measure"}, required = false,
             usage = "the similarity function to be used for similarity retrieval")
     private SimilarityMeasure similarityMeasure = SimilarityMeasure.L1;
+    private Attribute classAttribute = null;
+    private Attribute documentAttribute = null;
 
     public void run() throws Exception {
         setupIndices();
-
-        DistanceFunction distanceFunction = null;
-        switch (similarityMeasure) {
-            case L1:
-                distanceFunction = new ManhattanDistance();
-                break;
-            case L2:
-                distanceFunction = new EuclideanDistance();
-                break;
-            default:
-                System.out.println("unknown similarity measure");
-                System.exit(1);
-        }
-
         printProgramStatus();
 
-        for (File indexFile : indicesUsed) {
-            System.out.println("\n\n-------- Index: " + indexFile + " ---------");
+        Multimap<String, DocumentSimilarity> similarities = HashMultimap.create();
 
-            // Prepare Data
+        for (File indexFile : indices) {
+            System.out.println("\n\n-------- Index: " + indexFile + " ---------");
             ConverterUtils.DataSource source = new ConverterUtils.DataSource(indexFile.toURI().toURL().toString());
             Instances indexInstances = source.getDataSet();
-
-            Attribute classAttribute = null;
-            Attribute documentAttribute = null;
 
             Enumeration attributes = indexInstances.enumerateAttributes();
             while (attributes.hasMoreElements()) {
@@ -101,60 +107,86 @@ public class Retrieval {
                 System.exit(1);
             }
 
-            List<Instance> documentVectors = new LinkedList<Instance>();
+            List<Instance> documentVectors = Lists.newLinkedList();
 
             Enumeration instances = indexInstances.enumerateInstances();
             while (instances.hasMoreElements()) {
                 Instance instance = (Instance) instances.nextElement();
 
-                String document = instance.toString(documentAttribute);
+                String document = getInstanceName(instance);
 
                 if (!queryDocuments.contains(document)) continue;
 
                 documentVectors.add(instance);
             }
 
-            com.google.common.collect.Multimap<Instance, Similarity> similarities = HashMultimap.create();
+            // calculate distance to all other documents in the index file
             instances = indexInstances.enumerateInstances();
             while (instances.hasMoreElements()) {
                 Instance instance = (Instance) instances.nextElement();
+                String instanceName = getInstanceName(instance);
 
-                for (Instance documentVector : documentVectors) {
+                for (Instance queryInstance : documentVectors) {
+                    String queryInstanceName = getInstanceName(queryInstance);
                     // skip same document
-                    if (documentVector.toString(documentAttribute).equals(instance.toString(documentAttribute)))
+                    if (instanceName.equals(queryInstanceName))
                         continue;
 
-                    double distance = distanceFunction.distance(documentVector, instance);
+                    double distance = similarityMeasure.getDistanceFunction().distance(queryInstance, instance);
 
-                    similarities.put(documentVector, new Similarity(distance, instance));
+                    similarities.put(queryInstanceName, new DocumentSimilarity(distance, queryInstanceName,
+                            instanceName, indexFile.toString()));
                 }
+            }
+
+            trimMatchesToSizeK(similarities);
+        }
+
+        trimMatchesToSizeK(similarities);
+
+        for (String queryDocument : similarities.keys()) {
+            Collection<DocumentSimilarity> similarityCollection = similarities.get(queryDocument);
+
+            System.out.println("Matches for " + queryDocument);
+
+            for (DocumentSimilarity documentSimilarity : similarityCollection) {
+                System.out.println(String.format("%.10s %3.5d %.20s", documentSimilarity.getTargetDocument(),
+                        documentSimilarity.getDistance(), documentSimilarity.getIndex()));
             }
         }
     }
 
-    public static void findkNearestDocuments(int k, Instances data) {
-        for (int c = 0; c < data.numInstances(); c++) {
-            Instance instance = data.instance(c);
+    private void trimMatchesToSizeK(Multimap<String, DocumentSimilarity> similarities) {
+        for (String queryDocument : similarities.keys()) {
+            Collection<DocumentSimilarity> similarityCollection = similarities.get(queryDocument);
+            List<DocumentSimilarity> similarityList = Lists.newArrayList(similarityCollection);
+
+            Collections.sort(similarityList, new Comparator<DocumentSimilarity>() {
+                public int compare(DocumentSimilarity s1, DocumentSimilarity s2) {
+                    return Double.compare(s1.getDistance(), s2.getDistance());
+                }
+            });
+
+            similarities.replaceValues(queryDocument, similarityList.subList(0, Math.min(k, similarityList.size())));
         }
     }
 
-    public static void experimentRunner(weka.core.DistanceFunction distanceFunction, Instances data) {
-
-
+    private String getInstanceName(Instance instance) {
+        return instance.toString(classAttribute) + "/" + instance.toString(documentAttribute);
     }
 
     private void setupIndices() {
-        if (indicesUsed == null || indicesUsed.size() == 0) {
+        if (indices == null || indices.size() == 0) {
             String workingDirectory = System.getProperty("user.dir");
             File file = new File(workingDirectory);
-            indicesUsed = Arrays.asList(file.listFiles(new FilenameFilter() {
+            indices = Arrays.asList(file.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
                     return name.endsWith(".arff");
                 }
             }));
         }
 
-        if (indicesUsed.size() == 0) {
+        if (indices.size() == 0) {
             System.err.println("No .arff files found in current directory, or no .arff files specified");
             System.exit(1);
         }
@@ -164,7 +196,7 @@ public class Retrieval {
         System.out.println(String.format("k                 : %d", k));
         System.out.println(String.format("Similarity Measure: %s", similarityMeasure));
         System.out.println("Used inidices:");
-        for (File indexFile : indicesUsed) {
+        for (File indexFile : indices) {
             System.out.println("\t" + indexFile.getName());
         }
         System.out.println("Document query:");
