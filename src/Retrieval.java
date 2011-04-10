@@ -178,7 +178,6 @@ public class Retrieval {
             ConverterUtils.DataSource source = new ConverterUtils.DataSource(indexFile.getAbsolutePath());
             Instances indexInstances = source.getDataSet();
         	
-            
             Enumeration attributes = indexInstances.enumerateAttributes();
             while (attributes.hasMoreElements()) {
                 Attribute attribute = (Attribute) attributes.nextElement();
@@ -204,7 +203,7 @@ public class Retrieval {
                 System.exit(1);
             }
             
-            Instance queryVektor = new Instance(indexInstances.numAttributes());
+            Instance queryVector = new Instance(indexInstances.numAttributes());
             attributes = indexInstances.enumerateAttributes();
             while (attributes.hasMoreElements()) {
                 Attribute attribute = (Attribute) attributes.nextElement();
@@ -213,11 +212,11 @@ public class Retrieval {
                 {
                     if (attribute.name().matches(queryWord))
                     {
-                    	queryVektor.setValue(attribute, 1);
+                    	queryVector.setValue(attribute, 1);
                     }
                     else
                     {
-                    	queryVektor.setValue(attribute, 0);
+                    	queryVector.setValue(attribute, 0);
                     }
                 }             
             }
