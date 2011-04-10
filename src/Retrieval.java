@@ -1,6 +1,9 @@
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Splitter;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Multimap;
+import org.apache.tools.ant.DirectoryScanner;
 import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
@@ -59,6 +62,7 @@ public class Retrieval {
     }
 
     @Option(name = "-i", aliases = {"--index"}, multiValued = true, required = false, usage = "the indices to be used")
+    private List<String> indicesNames;
     private List<File> indices;
     @Argument(multiValued = true, required = true, index = 0, usage = "the names of the query documents",
             metaVar = "QUERY")
@@ -177,14 +181,43 @@ public class Retrieval {
     }
 
     private void setupIndices() {
-        if (indices == null || indices.size() == 0) {
-            String workingDirectory = System.getProperty("user.dir");
-            File file = new File(workingDirectory);
+        String workingDirectory = System.getProperty("user.dir");
+        File file = new File(workingDirectory);
+
+        if (indicesNames == null || indicesNames.size() == 0) {
             indices = Arrays.asList(file.listFiles(new FilenameFilter() {
                 public boolean accept(File dir, String name) {
-                    return name.endsWith(".arff");
+                    return name.endsWith(".arff") || name.endsWith(".arff.gz");
                 }
             }));
+        } else {
+            indices = Lists.newLinkedList();
+
+            DirectoryScanner directoryScanner = new DirectoryScanner();
+            directoryScanner.setBasedir(file);
+            directoryScanner.setCaseSensitive(true);
+
+            for (String indexName : indicesNames) {
+                Iterable<String> subIndicesNames =
+                        Splitter.on(CharMatcher.is(',')).omitEmptyStrings().trimResults().split(
+                                indexName);
+
+                List<String> subIndices = Lists.newArrayList(subIndicesNames);
+
+                for (String subIndice : subIndices) {
+                    System.out.println("subindex " + subIndice);
+                }
+
+                directoryScanner.setIncludes(subIndices.toArray(new String[subIndices.size()]));
+                directoryScanner.scan();
+                String[] fileNames = directoryScanner.getIncludedFiles();
+
+                for (String fileName : fileNames) {
+                    if(!fileName.endsWith(".arff") && !fileName.endsWith(".arrf.gz")) continue;
+
+                    indices.add(new File(fileName));
+                }
+            }
         }
 
         if (indices.size() == 0) {
