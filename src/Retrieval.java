@@ -8,12 +8,12 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils;
 
+//import javax.management.Attribute;
 import java.io.File;
 import java.io.FilenameFilter;
-import java.io.IOException;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.List;
-
 
 
 public class Retrieval {
@@ -37,33 +37,47 @@ public class Retrieval {
         setupIndices();
         printProgramStatus();
 
-        for (File dataPath : indicesUsed) {
-            System.out.println("\n\n-------- Dataset: " + dataPath + " ---------");
+        for (File indexFile : indicesUsed) {
+            System.out.println("\n\n-------- Dataset: " + indexFile + " ---------");
 
             // Prepare Data
-            ConverterUtils.DataSource source = new ConverterUtils.DataSource(dataPath.getAbsolutePath());
-            Instances data = source.getDataSet();
-            
-            for(int c = 0; c < data.numAttributes(); c++)
-            {
-            	Attribute attribute = data.attribute(c);
-            	
-            	if(attribute.name().contains("class"))
-            	{
-                    if (data.classIndex() == -1) 
-                    {
-                        data.setClassIndex(c);
-                    }
-            	}
-            }
 
 
 
             // run algorithms
             System.out.println("--- Running Similarity function ---");
 
-            // experimentRunner()
+            ConverterUtils.DataSource source = new ConverterUtils.DataSource(indexFile.toURI().toURL().toString());
+            Instances indexInstances = source.getDataSet();
 
+            Attribute classAttribute = null;
+            Attribute documentAttribute = null;
+
+            Enumeration attributes = indexInstances.enumerateAttributes();
+            while (attributes.hasMoreElements()) {
+                Attribute attribute = (Attribute) attributes.nextElement();
+
+
+                if(classAttribute == null && attribute.getName().matches(".*[Cc]lass.*"))
+                    classAttribute = attribute;
+
+                if(documentAttribute == null && attribute.getName().matches(".*[Dd]ocument.*"))
+                    documentAttribute = attribute;
+
+                if(documentAttribute != null && classAttribute != null) break;
+            }
+
+            if(classAttribute == null) {
+                System.err.println("No class attribute found for index " + indexFile);
+                System.err.println("Aborting");
+                System.exit(1);
+            }
+
+            if(documentAttribute == null) {
+                System.err.println("No document attribute found for index " + indexFile);
+                System.err.println("Aborting");
+                System.exit(1);
+            }
 
         }
     }
