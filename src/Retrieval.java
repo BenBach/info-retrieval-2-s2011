@@ -85,7 +85,7 @@ public class Retrieval {
         }
     }
 
-    public static class DocumentStatistics {
+    public static class DocumentStatistics implements Comparable<DocumentStatistics> {
         private int numberOfOccurrences;
         private List<Integer> ranks;
         private List<Double> distances;
@@ -135,6 +135,20 @@ public class Retrieval {
         public int getNumberOfOccurrences() {
             return numberOfOccurrences;
         }
+
+        @Override
+        public int compareTo(DocumentStatistics o) {
+            int result;
+
+            result = o.getNumberOfOccurrences() - getNumberOfOccurrences();
+            if(result != 0.0) return result;
+
+            result = Double.compare(getAverageRank(), o.getAverageRank());
+            if(result != 0.0) return result;
+
+            result = Double.compare(getAverageDistance(), o.getAverageDistance());
+            return result;
+        }
     }
 
     @Option(name = "-i", aliases = {"--index"}, multiValued = true, required = false, usage = "the indices to be used")
@@ -157,6 +171,7 @@ public class Retrieval {
     public void query() throws Exception
     {
     	setupIndices();
+
         // index -> document -> similarity
         Map<String, Multimap<String, DocumentSimilarity>> similaritiesByIndex = Maps.newHashMap();
         // document -> similarity
@@ -168,7 +183,9 @@ public class Retrieval {
             ConverterUtils.DataSource source = new ConverterUtils.DataSource(indexFile.getAbsolutePath());
             Instances indexInstances = source.getDataSet();
         	
+
             Instance queryVektor = new Instance(indexInstances.numAttributes());
+
             Enumeration attributes = indexInstances.enumerateAttributes();
             while (attributes.hasMoreElements()) {
                 Attribute attribute = (Attribute) attributes.nextElement();
@@ -198,10 +215,13 @@ public class Retrieval {
                 System.err.println("No document attribute found for index " + indexFile);
                 System.err.println("Aborting");
                 System.exit(1);
-            }
+            }         
+
             
             
-            
+
+            Instance queryVector = new Instance(indexInstances.numAttributes());
+
             attributes = indexInstances.enumerateAttributes();
             while (attributes.hasMoreElements()) {
                 Attribute attribute = (Attribute) attributes.nextElement();
@@ -210,11 +230,11 @@ public class Retrieval {
                 {
                     if (attribute.name().matches(queryWord))
                     {
-                    	queryVektor.setValue(attribute, 1);
+                    	queryVector.setValue(attribute, 1);
                     }
                     else
                     {
-                    	queryVektor.setValue(attribute, 0);
+                    	queryVector.setValue(attribute, 0);
                     }
                 }             
             }
@@ -329,6 +349,11 @@ public class Retrieval {
     }
     
     public void run() throws Exception {
+        if(queryWords != null) {
+            query();
+            return;
+        }
+
         setupIndices();
         printProgramStatus();
 
@@ -413,31 +438,37 @@ public class Retrieval {
 
         // build a table: query / index -> {similarity}
         Table<String, String, List<DocumentSimilarity>> table = HashBasedTable.create();
-        for (Map.Entry<String, DocumentSimilarity> stringDocumentSimilarityEntry : similaritiesByDocument.entries()) {
-            List<DocumentSimilarity> similarities = table.get(
-                    stringDocumentSimilarityEntry.getValue().getSourceDocument(),
-                    stringDocumentSimilarityEntry.getKey());
+        for (Map.Entry<String, Multimap<String, DocumentSimilarity>> indexToSimilarities : similaritiesByIndex.entrySet()) {
+            String column = indexToSimilarities.getKey();
 
-            if (similarities == null) {
-                similarities = Lists.newArrayList();
+            for (Map.Entry<String, DocumentSimilarity> queryToSimilarity : indexToSimilarities.getValue().entries()) {
+                String row = queryToSimilarity.getKey();
 
-                table.put(stringDocumentSimilarityEntry.getValue().getSourceDocument(),
-                        stringDocumentSimilarityEntry.getKey(), similarities);
+                List<DocumentSimilarity> similarities = table.get(row, column);
+
+                if (similarities == null) {
+                    similarities = Lists.newArrayList();
+                    table.put(row, column, similarities);
+                }
+
+                similarities.add(queryToSimilarity.getValue());
             }
-
-            similarities.add(stringDocumentSimilarityEntry.getValue());
         }
 
         // for each query
         for (String query : table.rowKeySet()) {
-            Map<String, DocumentStatistics> statistics = Maps.newHashMap();
+            BiMap<String, DocumentStatistics> statistics = HashBiMap.create();
+
             List<DocumentSimilarity> allSimilarities = Lists.newArrayList();
 
+            // for each index
             for (List<DocumentSimilarity> documentSimilarities : table.row(query).values()) {
-                allSimilarities.addAll(documentSimilarities);
+                Collections.sort(documentSimilarities);
 
-                for (int i = 0, documentSimilaritiesSize = documentSimilarities.size(); i < documentSimilaritiesSize;
-                     i++) {
+                allSimilarities.addAll(documentSimilarities);
+                int documentSimilaritiesSize = documentSimilarities.size();
+
+                for (int i = 0; i < documentSimilaritiesSize; i++) {
                     DocumentSimilarity documentSimilarity = documentSimilarities.get(i);
                     String name = documentSimilarity.getTargetDocument();
                     DocumentStatistics documentStatistics = statistics.get(name);
@@ -447,7 +478,7 @@ public class Retrieval {
                         statistics.put(name, documentStatistics);
                     }
 
-                    documentStatistics.addState(i, documentSimilarity.getDistance());
+                    documentStatistics.addState(i + 1, documentSimilarity.getDistance());
                 }
             }
 
@@ -464,13 +495,16 @@ public class Retrieval {
                         documentSimilarity.getDistance(), documentSimilarity.getIndex()));
             }
 
+            List<DocumentStatistics> statsSorted = Lists.newArrayList(statistics.values());
+            Collections.sort(statsSorted);
+
             System.out.println(String.format("\n%-40.40s %-7.7s %-15.15s %-15.15s", "document", "#occur", "avg rank",
-                            "avg dist"));
+                    "avg dist"));
             System.out.println("----------------------------------------+-------+---------------+---------------");
-            for (Map.Entry<String, DocumentStatistics> stats : statistics.entrySet()) {
-                System.out.println(String.format("%-40.40s %7d %15.3f %15.3f", stats.getKey(),
-                        stats.getValue().getNumberOfOccurrences(), stats.getValue().getAverageRank(),
-                        stats.getValue().getAverageDistance()));
+            for (DocumentStatistics stats : statsSorted) {
+                System.out.println(String.format("%-40.40s %7d %15.3f %15.3f", statistics.inverse().get(stats),
+                        stats.getNumberOfOccurrences(), stats.getAverageRank(),
+                        stats.getAverageDistance()));
             }
         }
     }
@@ -572,9 +606,9 @@ public class Retrieval {
             System.exit(1);
         }
 
+
         retrieval.query();
         //retrieval.run();
-        
     }
 
 }
