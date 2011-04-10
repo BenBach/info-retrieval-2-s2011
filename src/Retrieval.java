@@ -170,7 +170,6 @@ public class Retrieval {
     {
     	setupIndices();
     	
-    	
         // index -> document -> similarity
         Multimap<String, DocumentSimilarity> similarities = HashMultimap.create();
         
@@ -226,6 +225,11 @@ public class Retrieval {
     }
     
     public void run() throws Exception {
+        if(queryWords != null) {
+            query();
+            return;
+        }
+
         setupIndices();
         printProgramStatus();
 
@@ -478,8 +482,7 @@ public class Retrieval {
             System.exit(1);
         }
 
-        //retrieval.run();
-        retrieval.query();
+        retrieval.run();
     }
 
 }
