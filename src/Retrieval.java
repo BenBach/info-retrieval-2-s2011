@@ -164,7 +164,6 @@ public class Retrieval {
     private SimilarityMeasure similarityMeasure = SimilarityMeasure.L1;
     private Attribute classAttribute = null;
     private Attribute documentAttribute = null;
-
     @Option(name = "-q", aliases = {"--query"}, multiValued = true, required = false, usage = "the query to be used")
     private List<String> queryWords;
     
@@ -606,9 +605,7 @@ public class Retrieval {
             System.exit(1);
         }
 
-
-        retrieval.query();
-        //retrieval.run();
+        retrieval.run();
     }
 
 }
