@@ -1,0 +1,933 @@
+subindex arff/news*
+k                 : 10
+Similarity Measure: L1
+Used inidices:
+	news_5grams_001_04_stm_stw.arff
+	news_BoW_Boolean_Thresh_1_40.arff
+	news_BoW_TFIDF_Thresh_1_40.arff
+	news_word-2grams_tf-idf_0.01-0.4.arff
+	news_word-3grams_tf-idf_0.01-0.4.arff
+Document query:
+	comp.graphics/38863
+	talk.politics.guns/55082
+	soc.religion.christian/21409
+	talk.politics.mideast/76075
+	sci.med/59297
+	talk.politics.guns/54831
+	rec.sport.baseball/104988
+	sci.crypt/15879
+	misc.forsale/76937
+	sci.crypt/16074
+
+
+========================= Query:   misc.forsale/76937 ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+misc.forsale/76841                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/75935                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/75896                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76659                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76327                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76228                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76321                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76358                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76359                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76312                       0.000 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76230                       0.123 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75889                       0.127 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76474                       0.127 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76517                       0.127 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76342                       0.127 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75935                       0.127 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76804                       0.127 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76495                       0.127 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76853                       0.279 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76182                       0.476 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    10.546 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               11.546 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           11.546 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               11.546 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      11.748 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               12.372 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76495                      12.800 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        13.546 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             13.988 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60581          14.279 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76495                      34.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.windows.x/68218                    34.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59367                           35.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178690               35.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104905               35.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/105148               35.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76596                      36.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/101589                        37.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76440                      37.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.graphics/38716                     38.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.os.ms-windows.misc/9987            88.977 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983            88.992 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          100.882 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   103.882 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         106.117 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     109.882 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     109.888 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       111.739 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              114.770 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 114.788 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+misc.forsale/76495                             4           5.750          39.204
+comp.windows.x/68218                           3           2.333          49.476
+sci.med/59367                                  3           3.000          49.143
+talk.politics.misc/178690                      3           5.667          53.772
+rec.autos/101589                               3           8.000          54.095
+rec.sport.baseball/104905                      2           3.500          23.273
+misc.forsale/75935                             2           4.000           0.064
+rec.sport.baseball/105148                      2           6.000          23.686
+misc.forsale/76596                             2           6.000          23.874
+comp.sys.ibm.pc.hardware/60581                 2           7.500          60.198
+misc.forsale/76841                             1           1.000           0.000
+misc.forsale/76230                             1           1.000           0.123
+comp.os.ms-windows.misc/9987                   1           1.000          88.977
+misc.forsale/75889                             1           2.000           0.127
+comp.os.ms-windows.misc/9983                   1           2.000          88.992
+misc.forsale/75896                             1           3.000           0.000
+misc.forsale/76474                             1           3.000           0.127
+misc.forsale/76659                             1           4.000           0.000
+misc.forsale/76517                             1           4.000           0.127
+misc.forsale/76327                             1           5.000           0.000
+misc.forsale/76342                             1           5.000           0.127
+misc.forsale/76228                             1           6.000           0.000
+misc.forsale/76573                             1           6.000         109.882
+misc.forsale/76321                             1           7.000           0.000
+misc.forsale/76804                             1           7.000           0.127
+misc.forsale/76358                             1           8.000           0.000
+misc.forsale/76359                             1           9.000           0.000
+misc.forsale/76853                             1           9.000           0.279
+comp.sys.mac.hardware/52045                    1           9.000          13.988
+misc.forsale/76440                             1           9.000          37.000
+misc.forsale/76312                             1          10.000           0.000
+misc.forsale/76182                             1          10.000           0.476
+comp.graphics/38716                            1          10.000          38.000
+rec.sport.hockey/53822                         1          10.000         114.788
+
+
+========================= Query:      sci.crypt/15879 ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+sci.crypt/15769                          2.131 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15262                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15758                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15594                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15952                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15265                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15494                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15201                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15675                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/16101                          2.381 news_word-3grams_tf-idf_0.01-0.4.
+misc.forsale/76342                      14.236 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76495                      14.236 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/105040               14.236 news_word-2grams_tf-idf_0.01-0.4.
+sci.med/59367                           14.236 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9941            14.236 news_word-2grams_tf-idf_0.01-0.4.
+rec.autos/101589                        14.236 news_word-2grams_tf-idf_0.01-0.4.
+talk.politics.misc/178680               14.236 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104905               14.236 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9987            14.236 news_word-2grams_tf-idf_0.01-0.4.
+talk.religion.misc/83650                14.236 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    24.186 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           25.186 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               25.186 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               25.186 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      26.275 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               26.412 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        26.746 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76495                      27.786 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             27.878 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60581          27.919 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.windows.x/68218                   127.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59367                          128.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76596                     128.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178690              128.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/101589                       128.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104905              128.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76495                     128.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.electronics/54080                  129.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.hockey/52587                 129.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.mac.hardware/52035            129.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.os.ms-windows.misc/9987           160.431 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           160.446 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          172.369 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   175.369 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         177.960 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     182.283 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       182.401 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     185.157 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              185.184 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 185.657 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+sci.med/59367                                  4           2.750          84.948
+rec.autos/101589                               4           6.250          87.846
+misc.forsale/76495                             4           6.250          88.795
+comp.windows.x/68218                           3           2.000         108.851
+talk.politics.misc/178690                      3           5.333         112.790
+rec.sport.baseball/104905                      3           6.000          55.807
+misc.forsale/76596                             2           4.000          77.137
+comp.os.ms-windows.misc/9987                   2           5.000          87.333
+comp.sys.ibm.pc.hardware/60581                 2           7.500         102.940
+sci.crypt/15769                                1           1.000           2.131
+misc.forsale/76342                             1           1.000          14.236
+sci.crypt/15262                                1           2.000           2.381
+comp.os.ms-windows.misc/9983                   1           2.000         160.446
+sci.crypt/15758                                1           3.000           2.381
+rec.sport.baseball/105040                      1           3.000          14.236
+sci.crypt/15594                                1           4.000           2.381
+sci.crypt/15952                                1           5.000           2.381
+comp.os.ms-windows.misc/9941                   1           5.000          14.236
+sci.crypt/15265                                1           6.000           2.381
+rec.sport.baseball/105148                      1           6.000          26.412
+misc.forsale/76573                             1           6.000         182.283
+sci.crypt/15494                                1           7.000           2.381
+talk.politics.misc/178680                      1           7.000          14.236
+sci.crypt/15201                                1           8.000           2.381
+sci.electronics/54080                          1           8.000         129.000
+sci.crypt/15675                                1           9.000           2.381
+comp.sys.mac.hardware/52045                    1           9.000          27.878
+rec.sport.hockey/52587                         1           9.000         129.000
+sci.crypt/16101                                1          10.000           2.381
+talk.religion.misc/83650                       1          10.000          14.236
+comp.sys.mac.hardware/52035                    1          10.000         129.000
+rec.sport.hockey/53822                         1          10.000         185.657
+
+
+========================= Query: rec.sport.baseball/1 ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+rec.sport.baseball/104898                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104600                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104837                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/102629                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104727                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104443                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104911                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/105040                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/105148                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104333                2.571 news_word-3grams_tf-idf_0.01-0.4.
+rec.sport.baseball/105148               18.416 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/105040               18.416 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104905               18.416 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76474                      19.416 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54229                  19.416 news_word-2grams_tf-idf_0.01-0.4.
+comp.sys.ibm.pc.hardware/60581          19.416 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9983            19.416 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76517                      19.416 news_word-2grams_tf-idf_0.01-0.4.
+talk.religion.misc/83650                19.416 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76495                      19.416 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104905               38.219 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.windows.x/68218                    38.219 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               39.101 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           39.219 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               39.292 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      40.226 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        41.104 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             41.472 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.hockey/52587                  41.868 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60581          41.953 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.os.ms-windows.misc/9987           186.766 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           186.782 news_5grams_001_04_stm_stw.arff  
+talk.politics.guns/54457               196.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104807              197.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.hockey/53794                 198.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.graphics/38995                    198.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59367                          198.695 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/179055              199.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.mac.hardware/51533            199.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104650              200.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.hockey/52644                 200.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178690              200.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/101589                       200.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.windows.x/68218                   201.727 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         204.140 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     208.727 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       209.418 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 210.086 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     211.298 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              211.987 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+rec.sport.baseball/105148                      3           5.000          20.093
+comp.sys.ibm.pc.hardware/60581                 3           7.000          88.503
+talk.politics.misc/178690                      3           7.333         150.363
+rec.autos/101589                               3           8.000         150.174
+rec.sport.baseball/104905                      2           2.000          28.318
+comp.windows.x/68218                           2           3.000         119.973
+sci.med/59367                                  2           3.500         118.957
+comp.os.ms-windows.misc/9983                   2           4.500         103.099
+rec.sport.baseball/105040                      2           5.000          10.493
+misc.forsale/76495                             2           9.500         115.357
+rec.sport.baseball/104898                      1           1.000           2.571
+comp.os.ms-windows.misc/9987                   1           1.000         186.766
+talk.politics.guns/54457                       1           1.000         196.000
+rec.sport.baseball/104600                      1           2.000           2.571
+rec.sport.baseball/104807                      1           2.000         197.000
+rec.sport.baseball/104837                      1           3.000           2.571
+rec.sport.hockey/53794                         1           3.000         198.000
+rec.sport.baseball/102629                      1           4.000           2.571
+misc.forsale/76474                             1           4.000          19.416
+comp.graphics/38995                            1           4.000         198.000
+rec.sport.baseball/104727                      1           5.000           2.571
+rec.sport.hockey/54229                         1           5.000          19.416
+talk.politics.misc/179055                      1           5.000         199.000
+rec.sport.baseball/104443                      1           6.000           2.571
+misc.forsale/76596                             1           6.000          40.226
+comp.sys.mac.hardware/51533                    1           6.000         199.000
+misc.forsale/76573                             1           6.000         208.727
+rec.sport.baseball/104911                      1           7.000           2.571
+rec.sport.baseball/104650                      1           7.000         200.000
+misc.forsale/76517                             1           8.000          19.416
+comp.sys.mac.hardware/52045                    1           8.000          41.472
+rec.sport.hockey/52644                         1           8.000         200.000
+rec.sport.hockey/53822                         1           8.000         210.086
+talk.religion.misc/83650                       1           9.000          19.416
+rec.sport.hockey/52587                         1           9.000          41.868
+rec.sport.baseball/104333                      1          10.000           2.571
+
+
+========================= Query:      sci.crypt/16074 ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+sci.crypt/15997                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15675                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15265                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15570                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/16101                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15389                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15262                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15201                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15889                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+sci.crypt/15952                          0.678 news_word-3grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9941            15.102 news_word-2grams_tf-idf_0.01-0.4.
+comp.sys.ibm.pc.hardware/60581          15.102 news_word-2grams_tf-idf_0.01-0.4.
+talk.religion.misc/83650                15.102 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76495                      15.102 news_word-2grams_tf-idf_0.01-0.4.
+rec.autos/101589                        15.102 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54093                  15.102 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9983            15.102 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76342                      15.102 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9987            15.102 news_word-2grams_tf-idf_0.01-0.4.
+talk.politics.misc/178680               15.102 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    27.155 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               27.907 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               28.155 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           28.155 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               29.059 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      29.357 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        29.994 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.crypt/15899                         30.377 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60288          30.734 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             30.795 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.crypt/15899                         89.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178690               90.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.ibm.pc.hardware/60288          91.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.windows.x/68218                    91.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104905               92.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59367                           92.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/101589                        92.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/105148               92.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.electronics/53940                   93.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.ibm.pc.hardware/60534          94.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.os.ms-windows.misc/9987           184.244 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           184.260 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          195.796 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   199.050 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         201.742 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     206.150 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       206.801 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     208.939 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 209.162 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              210.038 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+rec.autos/101589                               4           6.500          85.974
+comp.windows.x/68218                           3           3.000         105.735
+sci.med/59367                                  3           4.333         105.317
+talk.politics.misc/178690                      3           4.667         109.315
+comp.sys.ibm.pc.hardware/60581                 2           3.500         108.422
+rec.sport.baseball/104905                      2           4.000          60.077
+sci.crypt/15899                                2           4.500          59.689
+comp.os.ms-windows.misc/9983                   2           4.500          99.681
+comp.os.ms-windows.misc/9987                   2           5.000          99.673
+comp.sys.ibm.pc.hardware/60288                 2           6.000          60.867
+misc.forsale/76495                             2           6.000         112.020
+rec.sport.baseball/105148                      2           6.500          60.530
+sci.crypt/15997                                1           1.000           0.678
+comp.os.ms-windows.misc/9941                   1           1.000          15.102
+sci.crypt/15675                                1           2.000           0.678
+sci.crypt/15265                                1           3.000           0.678
+talk.religion.misc/83650                       1           3.000          15.102
+sci.crypt/15570                                1           4.000           0.678
+sci.crypt/16101                                1           5.000           0.678
+sci.crypt/15389                                1           6.000           0.678
+rec.sport.hockey/54093                         1           6.000          15.102
+misc.forsale/76596                             1           6.000          29.357
+misc.forsale/76573                             1           6.000         206.150
+sci.crypt/15262                                1           7.000           0.678
+sci.crypt/15201                                1           8.000           0.678
+misc.forsale/76342                             1           8.000          15.102
+sci.crypt/15889                                1           9.000           0.678
+sci.electronics/53940                          1           9.000          93.000
+rec.sport.hockey/53822                         1           9.000         209.162
+sci.crypt/15952                                1          10.000           0.678
+talk.politics.misc/178680                      1          10.000          15.102
+comp.sys.mac.hardware/52045                    1          10.000          30.795
+comp.sys.ibm.pc.hardware/60534                 1          10.000          94.000
+
+
+========================= Query: talk.politics.guns/5 ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+talk.politics.guns/54841                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54315                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54920                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54278                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54405                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/55061                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54402                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54478                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54723                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54602                 0.349 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54375                11.040 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9941            12.040 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75889                      12.040 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76804                      12.040 news_word-2grams_tf-idf_0.01-0.4.
+talk.religion.misc/83650                12.040 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/105040               12.040 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9987            12.040 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104905               12.040 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75935                      12.040 news_word-2grams_tf-idf_0.01-0.4.
+rec.autos/101589                        12.040 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    25.874 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               26.741 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               26.874 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           26.874 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               27.928 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      28.077 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        28.788 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.guns/54315                29.055 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60288          29.510 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             29.591 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690              160.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/103227                       160.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.mideast/76312            161.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.guns/54315               161.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.ibm.pc.hardware/60288         161.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178683              161.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.mideast/76505            161.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.windows.x/68218                   161.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.os.ms-windows.misc/9987           161.865 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           161.880 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          162.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104905              162.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59367                          173.805 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   176.805 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         179.316 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     183.673 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       184.226 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 185.415 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     186.594 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              187.600 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+comp.windows.x/68218                           3           4.333         121.227
+talk.politics.misc/178690                      3           4.333         124.780
+talk.politics.guns/54315                       3           4.667          63.468
+sci.med/59367                                  3           5.333         120.893
+rec.sport.baseball/104905                      3           7.000          66.971
+rec.autos/101589                               3           8.000          75.018
+comp.os.ms-windows.misc/9987                   2           4.000          86.952
+comp.sys.ibm.pc.hardware/60288                 2           7.000          95.255
+talk.politics.guns/54841                       1           1.000           0.349
+talk.politics.guns/54375                       1           1.000          11.040
+comp.os.ms-windows.misc/9941                   1           2.000          12.040
+rec.autos/103227                               1           2.000         160.000
+comp.os.ms-windows.misc/9983                   1           2.000         161.880
+talk.politics.guns/54920                       1           3.000           0.349
+misc.forsale/75889                             1           3.000          12.040
+talk.politics.mideast/76312                    1           3.000         161.000
+talk.politics.guns/54278                       1           4.000           0.349
+misc.forsale/76804                             1           4.000          12.040
+talk.politics.guns/54405                       1           5.000           0.349
+talk.religion.misc/83650                       1           5.000          12.040
+rec.sport.baseball/105148                      1           5.000          27.928
+comp.sys.ibm.pc.hardware/60581                 1           5.000         179.316
+talk.politics.guns/55061                       1           6.000           0.349
+rec.sport.baseball/105040                      1           6.000          12.040
+misc.forsale/76596                             1           6.000          28.077
+talk.politics.misc/178683                      1           6.000         161.000
+misc.forsale/76573                             1           6.000         183.673
+talk.politics.guns/54402                       1           7.000           0.349
+talk.politics.mideast/76505                    1           7.000         161.000
+talk.politics.guns/54478                       1           8.000           0.349
+rec.sport.hockey/53822                         1           8.000         185.415
+talk.politics.guns/54723                       1           9.000           0.349
+misc.forsale/75935                             1           9.000          12.040
+misc.forsale/76495                             1           9.000         186.594
+talk.politics.guns/54602                       1          10.000           0.349
+comp.sys.mac.hardware/52045                    1          10.000          29.591
+
+
+========================= Query:  comp.graphics/38863 ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+comp.graphics/38347                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38681                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38811                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38725                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/39005                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38735                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38645                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38664                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38716                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38775                      1.969 news_word-3grams_tf-idf_0.01-0.4.
+comp.graphics/38681                     16.129 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54229                  16.853 news_word-2grams_tf-idf_0.01-0.4.
+comp.graphics/38775                     16.853 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9941            16.853 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76495                      16.853 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76342                      16.853 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76517                      16.853 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75935                      16.853 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75889                      16.853 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9987            16.853 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    17.739 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           18.739 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               18.739 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               18.739 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      19.510 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               19.965 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.graphics/38775                     20.485 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.hockey/52587                  20.572 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        20.739 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             20.765 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.windows.x/68218                    39.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59367                           40.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104905               40.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178690               40.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76596                      40.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.ibm.pc.hardware/60581          41.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.mac.hardware/52045             41.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/101589                        42.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/105148               42.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76790                      43.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.os.ms-windows.misc/9987           142.862 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           142.877 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          154.767 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   157.767 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         159.936 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     164.767 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       165.624 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     167.556 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 168.306 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              168.655 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+comp.windows.x/68218                           3           2.000          71.502
+sci.med/59367                                  3           2.333          71.169
+talk.politics.misc/178690                      3           5.667          75.798
+comp.graphics/38775                            3           6.667          13.102
+rec.autos/101589                               3           8.000          76.121
+comp.graphics/38681                            2           1.500           9.049
+rec.sport.baseball/104905                      2           3.500          29.369
+misc.forsale/76596                             2           5.000          29.755
+comp.os.ms-windows.misc/9987                   2           5.500          79.857
+comp.sys.ibm.pc.hardware/60581                 2           5.500         100.468
+misc.forsale/76495                             2           6.500          92.205
+rec.sport.baseball/105148                      2           7.500          30.982
+comp.sys.mac.hardware/52045                    2           8.500          30.882
+comp.graphics/38347                            1           1.000           1.969
+rec.sport.hockey/54229                         1           2.000          16.853
+comp.os.ms-windows.misc/9983                   1           2.000         142.877
+comp.graphics/38811                            1           3.000           1.969
+comp.graphics/38725                            1           4.000           1.969
+comp.os.ms-windows.misc/9941                   1           4.000          16.853
+comp.graphics/39005                            1           5.000           1.969
+comp.graphics/38735                            1           6.000           1.969
+misc.forsale/76342                             1           6.000          16.853
+misc.forsale/76573                             1           6.000         164.767
+comp.graphics/38645                            1           7.000           1.969
+misc.forsale/76517                             1           7.000          16.853
+comp.graphics/38664                            1           8.000           1.969
+misc.forsale/75935                             1           8.000          16.853
+rec.sport.hockey/52587                         1           8.000          20.572
+comp.graphics/38716                            1           9.000           1.969
+misc.forsale/75889                             1           9.000          16.853
+rec.sport.hockey/53822                         1           9.000         168.306
+misc.forsale/76790                             1          10.000          43.000
+
+
+========================= Query: soc.religion.christi ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+soc.religion.christian/21411             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/21546             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/20856             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/20632             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/20362             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/20569             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/20840             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/21797             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/21783             0.177 news_word-3grams_tf-idf_0.01-0.4.
+soc.religion.christian/20749             0.383 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/59367                           15.635 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9987            15.635 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    15.635 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75935                      15.635 news_word-2grams_tf-idf_0.01-0.4.
+comp.sys.ibm.pc.hardware/60581          15.635 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76342                      15.635 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76495                      15.635 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54777                  15.635 news_word-2grams_tf-idf_0.01-0.4.
+talk.politics.misc/178680               15.635 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54093                  15.635 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    23.295 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               24.052 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           24.295 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               24.295 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      25.498 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               25.521 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        26.138 news_BoW_TFIDF_Thresh_1_40.arff  
+soc.religion.christian/21365            26.830 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60581          27.029 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             27.101 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               79.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.windows.x/68218                    80.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/101589                        81.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59367                           81.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104905               81.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76596                      83.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/105148               83.000 news_BoW_Boolean_Thresh_1_40.arff
+soc.religion.christian/21365            83.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.ibm.pc.hardware/60288          84.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.ibm.pc.hardware/60581          84.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.os.ms-windows.misc/9987           178.890 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           178.906 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          190.809 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   193.681 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         196.241 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     200.809 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       201.403 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     203.598 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              204.023 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 204.447 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+comp.windows.x/68218                           4           2.500          78.153
+sci.med/59367                                  4           2.750          77.935
+comp.sys.ibm.pc.hardware/60581                 4           7.250          80.726
+talk.politics.misc/178690                      3           4.000         102.358
+rec.autos/101589                               3           5.667         102.847
+comp.os.ms-windows.misc/9987                   2           1.500          97.263
+rec.sport.baseball/104905                      2           4.500          52.648
+misc.forsale/76596                             2           5.500          54.249
+rec.sport.baseball/105148                      2           6.500          54.261
+misc.forsale/76495                             2           7.500         109.616
+soc.religion.christian/21365                   2           8.000          54.915
+soc.religion.christian/21411                   1           1.000           0.177
+soc.religion.christian/21546                   1           2.000           0.177
+comp.os.ms-windows.misc/9983                   1           2.000         178.906
+soc.religion.christian/20856                   1           3.000           0.177
+soc.religion.christian/20632                   1           4.000           0.177
+misc.forsale/75935                             1           4.000          15.635
+soc.religion.christian/20362                   1           5.000           0.177
+soc.religion.christian/20569                   1           6.000           0.177
+misc.forsale/76342                             1           6.000          15.635
+misc.forsale/76573                             1           6.000         200.809
+soc.religion.christian/20840                   1           7.000           0.177
+soc.religion.christian/21797                   1           8.000           0.177
+rec.sport.hockey/54777                         1           8.000          15.635
+soc.religion.christian/21783                   1           9.000           0.177
+talk.politics.misc/178680                      1           9.000          15.635
+comp.sys.ibm.pc.hardware/60288                 1           9.000          84.000
+soc.religion.christian/20749                   1          10.000           0.383
+rec.sport.hockey/54093                         1          10.000          15.635
+comp.sys.mac.hardware/52045                    1          10.000          27.101
+rec.sport.hockey/53822                         1          10.000         204.447
+
+
+========================= Query:        sci.med/59297 ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+sci.med/59358                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/58081                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/58935                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/58062                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/59169                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/59577                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/58911                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/59367                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/59398                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/59594                            0.000 news_word-3grams_tf-idf_0.01-0.4.
+sci.med/59367                            7.068 news_word-2grams_tf-idf_0.01-0.4.
+sci.med/59398                            7.268 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/104905                8.068 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75889                       8.068 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9983             8.068 news_word-2grams_tf-idf_0.01-0.4.
+talk.religion.misc/83650                 8.068 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.baseball/105040                8.068 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9941             8.068 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75935                       8.068 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76474                       8.068 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    16.347 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           16.347 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               17.347 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               17.347 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        18.228 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      18.549 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               18.573 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60581          18.962 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             19.768 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76495                      20.227 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           31.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.windows.x/68218                    31.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/101589                        32.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178690               32.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104905               32.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.ibm.pc.hardware/60581          33.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76596                      34.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/105148               34.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.mac.hardware/52045             35.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76495                      36.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.os.ms-windows.misc/9987           118.361 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           118.377 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          129.267 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   133.267 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         135.581 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       138.627 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     140.267 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     143.056 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              143.769 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 144.700 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+sci.med/59367                                  5           3.000          36.736
+comp.windows.x/68218                           3           2.333          60.205
+rec.sport.baseball/104905                      3           4.000          19.138
+rec.autos/101589                               3           4.667          62.952
+talk.politics.misc/178690                      3           5.333          64.372
+comp.sys.ibm.pc.hardware/60581                 3           6.333          62.514
+misc.forsale/76495                             3           9.333          66.428
+comp.os.ms-windows.misc/9983                   2           3.500          63.223
+sci.med/59398                                  2           5.500           3.634
+misc.forsale/76596                             2           6.500          26.275
+rec.sport.baseball/105148                      2           7.500          26.286
+comp.sys.mac.hardware/52045                    2           9.000          27.384
+sci.med/59358                                  1           1.000           0.000
+comp.os.ms-windows.misc/9987                   1           1.000         118.361
+sci.med/58081                                  1           2.000           0.000
+sci.med/58935                                  1           3.000           0.000
+sci.med/58062                                  1           4.000           0.000
+misc.forsale/75889                             1           4.000           8.068
+sci.med/59169                                  1           5.000           0.000
+sci.med/59577                                  1           6.000           0.000
+talk.religion.misc/83650                       1           6.000           8.068
+sci.med/58911                                  1           7.000           0.000
+rec.sport.baseball/105040                      1           7.000           8.068
+misc.forsale/76573                             1           7.000         140.267
+comp.os.ms-windows.misc/9941                   1           8.000           8.068
+misc.forsale/75935                             1           9.000           8.068
+sci.med/59594                                  1          10.000           0.000
+misc.forsale/76474                             1          10.000           8.068
+rec.sport.hockey/53822                         1          10.000         144.700
+
+
+========================= Query: talk.politics.guns/5 ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+talk.politics.guns/54375                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54920                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54643                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54841                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54278                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54602                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54402                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54405                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/55061                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54659                 1.000 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.guns/54375                 7.292 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/53540                   8.201 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54229                   8.292 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54093                   8.292 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76804                       8.292 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9941             8.292 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76474                       8.292 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9983             8.292 news_word-2grams_tf-idf_0.01-0.4.
+talk.religion.misc/83650                 8.292 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54777                   8.292 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    17.476 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               18.476 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               18.476 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           18.476 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      19.433 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               19.702 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        20.476 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             20.838 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76495                      21.139 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60581          21.210 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.windows.x/68218                    61.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/104905               62.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59367                           62.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178690               62.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76596                      62.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.mac.hardware/52045             63.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.sys.mac.hardware/50538             64.000 news_BoW_Boolean_Thresh_1_40.arff
+misc.forsale/76495                      64.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.autos/101589                        64.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.baseball/105148               64.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.os.ms-windows.misc/9987           117.000 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           117.016 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          128.934 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   131.934 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         133.841 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     138.934 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       139.791 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     141.723 news_5grams_001_04_stm_stw.arff  
+talk.politics.misc/178690              142.625 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 143.083 news_5grams_001_04_stm_stw.arff  
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+comp.windows.x/68218                           3           2.000          70.137
+sci.med/59367                                  3           3.333          69.803
+talk.politics.misc/178690                      3           5.333          74.367
+rec.autos/101589                               3           7.667          74.756
+misc.forsale/76495                             3           8.333          75.621
+talk.politics.guns/54375                       2           1.000           4.146
+rec.sport.baseball/104905                      2           2.000          40.238
+misc.forsale/76596                             2           5.000          40.717
+comp.os.ms-windows.misc/9983                   2           5.000          62.654
+comp.sys.mac.hardware/52045                    2           7.000          41.919
+comp.sys.ibm.pc.hardware/60581                 2           7.500          77.525
+rec.sport.baseball/105148                      2           8.000          41.851
+comp.os.ms-windows.misc/9987                   1           1.000         117.000
+talk.politics.guns/54920                       1           2.000           1.000
+rec.sport.hockey/53540                         1           2.000           8.201
+talk.politics.guns/54643                       1           3.000           1.000
+rec.sport.hockey/54229                         1           3.000           8.292
+talk.politics.guns/54841                       1           4.000           1.000
+rec.sport.hockey/54093                         1           4.000           8.292
+talk.politics.guns/54278                       1           5.000           1.000
+misc.forsale/76804                             1           5.000           8.292
+talk.politics.guns/54602                       1           6.000           1.000
+comp.os.ms-windows.misc/9941                   1           6.000           8.292
+misc.forsale/76573                             1           6.000         138.934
+talk.politics.guns/54402                       1           7.000           1.000
+misc.forsale/76474                             1           7.000           8.292
+comp.sys.mac.hardware/50538                    1           7.000          64.000
+talk.politics.guns/54405                       1           8.000           1.000
+talk.politics.guns/55061                       1           9.000           1.000
+talk.religion.misc/83650                       1           9.000           8.292
+talk.politics.guns/54659                       1          10.000           1.000
+rec.sport.hockey/54777                         1          10.000           8.292
+rec.sport.hockey/53822                         1          10.000         143.083
+
+
+========================= Query: talk.politics.mideas ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+talk.politics.mideast/76158              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/76457              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/75936              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/76312              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/76245              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/77275              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/76277              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/77336              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/76505              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/75963              1.149 news_word-3grams_tf-idf_0.01-0.4.
+talk.politics.mideast/77336              8.748 news_word-2grams_tf-idf_0.01-0.4.
+talk.politics.mideast/76245              9.415 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76342                       9.415 news_word-2grams_tf-idf_0.01-0.4.
+comp.sys.ibm.pc.hardware/60581           9.415 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54093                   9.415 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76804                       9.415 news_word-2grams_tf-idf_0.01-0.4.
+rec.sport.hockey/54229                   9.415 news_word-2grams_tf-idf_0.01-0.4.
+comp.os.ms-windows.misc/9983             9.415 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/75889                       9.415 news_word-2grams_tf-idf_0.01-0.4.
+misc.forsale/76495                       9.415 news_word-2grams_tf-idf_0.01-0.4.
+comp.windows.x/68218                    27.995 news_BoW_TFIDF_Thresh_1_40.arff  
+talk.politics.misc/178690               28.919 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/104905               28.995 news_BoW_TFIDF_Thresh_1_40.arff  
+sci.med/59367                           28.995 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76596                      30.197 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.sport.baseball/105148               30.220 news_BoW_TFIDF_Thresh_1_40.arff  
+rec.autos/101589                        30.897 news_BoW_TFIDF_Thresh_1_40.arff  
+misc.forsale/76495                      31.599 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.ibm.pc.hardware/60581          31.728 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.sys.mac.hardware/52045             31.800 news_BoW_TFIDF_Thresh_1_40.arff  
+comp.os.ms-windows.misc/9987           167.845 news_5grams_001_04_stm_stw.arff  
+comp.os.ms-windows.misc/9983           167.861 news_5grams_001_04_stm_stw.arff  
+sci.med/59367                          179.696 news_5grams_001_04_stm_stw.arff  
+comp.windows.x/68218                   182.720 news_5grams_001_04_stm_stw.arff  
+comp.sys.ibm.pc.hardware/60581         185.227 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76573                     189.719 news_5grams_001_04_stm_stw.arff  
+rec.autos/101589                       190.229 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/53822                 191.114 news_5grams_001_04_stm_stw.arff  
+rec.sport.hockey/52630                 191.512 news_5grams_001_04_stm_stw.arff  
+misc.forsale/76495                     192.431 news_5grams_001_04_stm_stw.arff  
+talk.politics.mideast/77275            246.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.mideast/75945            247.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.mideast/75926            254.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/179025              257.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.med/59278                          259.000 news_BoW_Boolean_Thresh_1_40.arff
+rec.sport.hockey/54366                 260.000 news_BoW_Boolean_Thresh_1_40.arff
+sci.space/61045                        260.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.politics.misc/178690              260.000 news_BoW_Boolean_Thresh_1_40.arff
+talk.religion.misc/83860               260.000 news_BoW_Boolean_Thresh_1_40.arff
+comp.windows.x/68218                   261.000 news_BoW_Boolean_Thresh_1_40.arff
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+comp.windows.x/68218                           3           5.000         157.238
+comp.sys.ibm.pc.hardware/60581                 3           6.000          75.456
+misc.forsale/76495                             3           9.333          77.815
+talk.politics.mideast/76245                    2           3.500           5.282
+sci.med/59367                                  2           3.500         104.345
+talk.politics.mideast/77275                    2           3.500         123.574
+talk.politics.mideast/77336                    2           4.500           4.948
+comp.os.ms-windows.misc/9983                   2           5.000          88.638
+talk.politics.misc/178690                      2           5.000         144.460
+rec.autos/101589                               2           7.000         110.563
+talk.politics.mideast/76158                    1           1.000           1.149
+comp.os.ms-windows.misc/9987                   1           1.000         167.845
+talk.politics.mideast/76457                    1           2.000           1.149
+talk.politics.mideast/75945                    1           2.000         247.000
+talk.politics.mideast/75936                    1           3.000           1.149
+misc.forsale/76342                             1           3.000           9.415
+rec.sport.baseball/104905                      1           3.000          28.995
+talk.politics.mideast/75926                    1           3.000         254.000
+talk.politics.mideast/76312                    1           4.000           1.149
+talk.politics.misc/179025                      1           4.000         257.000
+rec.sport.hockey/54093                         1           5.000           9.415
+misc.forsale/76596                             1           5.000          30.197
+sci.med/59278                                  1           5.000         259.000
+misc.forsale/76804                             1           6.000           9.415
+rec.sport.baseball/105148                      1           6.000          30.220
+misc.forsale/76573                             1           6.000         189.719
+rec.sport.hockey/54366                         1           6.000         260.000
+talk.politics.mideast/76277                    1           7.000           1.149
+rec.sport.hockey/54229                         1           7.000           9.415
+sci.space/61045                                1           7.000         260.000
+rec.sport.hockey/53822                         1           8.000         191.114
+talk.politics.mideast/76505                    1           9.000           1.149
+misc.forsale/75889                             1           9.000           9.415
+rec.sport.hockey/52630                         1           9.000         191.512
+talk.religion.misc/83860                       1           9.000         260.000
+talk.politics.mideast/75963                    1          10.000           1.149
+comp.sys.mac.hardware/52045                    1          10.000          31.800

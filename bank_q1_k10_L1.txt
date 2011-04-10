@@ -1,0 +1,572 @@
+subindex arff/bank*
+k                 : 10
+Similarity Measure: L1
+Used inidices:
+	bank_BoW_Boolean_Thresh_1_40.arff
+	bank_BoW_FT_0_5-70_0_TFxIDF.arff
+	bank_BoW_TF_Thresh_1_40.arff
+	bank_s_i_0.5_70.0_3_out.arff
+	bank_word-2grams_tf-idf_0.01-0.4.arff
+	bank_word-3grams_tf-idf_0.01-0.4.arff
+Document query:
+	A/A0020.txt
+	B/B0414.txt
+	C/C0259.txt
+	D/D0615.txt
+	E/E0853.txt
+	F/F0274.txt
+
+
+========================= Query:          B/B0414.txt ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+B/B0368.txt                              1.601 bank_word-3grams_tf-idf_0.01-0.4.
+B/B0368.txt                              2.961 bank_BoW_TF_Thresh_1_40.arff     
+B/B0818.txt                              5.353 bank_word-3grams_tf-idf_0.01-0.4.
+B/B0368.txt                              5.797 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0459.txt                              6.288 bank_word-3grams_tf-idf_0.01-0.4.
+B/B0730.txt                              6.344 bank_word-3grams_tf-idf_0.01-0.4.
+B/B0818.txt                              8.197 bank_BoW_TF_Thresh_1_40.arff     
+B/B0368.txt                              8.819 bank_s_i_0.5_70.0_3_out.arff     
+B/B0595.txt                              9.497 bank_word-3grams_tf-idf_0.01-0.4.
+B/B0505.txt                              9.980 bank_word-3grams_tf-idf_0.01-0.4.
+B/B0459.txt                             11.071 bank_BoW_TF_Thresh_1_40.arff     
+B/B0274.txt                             11.176 bank_word-3grams_tf-idf_0.01-0.4.
+B/B0065.txt                             12.836 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0150.txt                             12.956 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0228.txt                             12.967 bank_word-3grams_tf-idf_0.01-0.4.
+B/B0730.txt                             13.217 bank_BoW_TF_Thresh_1_40.arff     
+B/B0595.txt                             13.956 bank_BoW_TF_Thresh_1_40.arff     
+B/B0818.txt                             14.738 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0505.txt                             14.977 bank_BoW_TF_Thresh_1_40.arff     
+B/B0368.txt                             15.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0818.txt                             16.025 bank_s_i_0.5_70.0_3_out.arff     
+B/B0274.txt                             16.304 bank_BoW_TF_Thresh_1_40.arff     
+B/B0595.txt                             16.984 bank_s_i_0.5_70.0_3_out.arff     
+B/B0505.txt                             19.122 bank_s_i_0.5_70.0_3_out.arff     
+B/B0459.txt                             19.660 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0730.txt                             20.677 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0459.txt                             20.989 bank_s_i_0.5_70.0_3_out.arff     
+B/B0730.txt                             23.983 bank_s_i_0.5_70.0_3_out.arff     
+B/B0211.txt                             24.870 bank_BoW_TF_Thresh_1_40.arff     
+B/B0909.txt                             24.870 bank_BoW_TF_Thresh_1_40.arff     
+B/B0821.txt                             24.870 bank_BoW_TF_Thresh_1_40.arff     
+B/B0274.txt                             25.707 bank_s_i_0.5_70.0_3_out.arff     
+B/B0595.txt                             27.771 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0818.txt                             28.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0505.txt                             30.470 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0274.txt                             32.475 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0070.txt                             33.372 bank_s_i_0.5_70.0_3_out.arff     
+A/A0608.txt                             33.732 bank_s_i_0.5_70.0_3_out.arff     
+A/A0750.txt                             33.732 bank_s_i_0.5_70.0_3_out.arff     
+B/B0459.txt                             40.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0023.txt                             43.097 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0979.txt                             43.097 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0973.txt                             43.097 bank_word-2grams_tf-idf_0.01-0.4.
+B/B0730.txt                             47.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0595.txt                             73.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0505.txt                             79.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0274.txt                             82.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0070.txt                            193.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0656.txt                            206.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0190.txt                            207.000 bank_BoW_Boolean_Thresh_1_40.arff
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+B/B0368.txt                                    5           1.000           6.836
+B/B0818.txt                                    5           2.000          14.463
+B/B0459.txt                                    5           3.400          19.602
+B/B0730.txt                                    5           4.400          22.244
+B/B0595.txt                                    5           4.600          28.242
+B/B0505.txt                                    5           5.600          30.710
+B/B0274.txt                                    5           7.000          33.532
+B/B0070.txt                                    2           8.000         113.186
+B/B0065.txt                                    1           8.000          12.836
+B/B0211.txt                                    1           8.000          24.870
+B/B0023.txt                                    1           8.000          43.097
+A/A0150.txt                                    1           9.000          12.956
+B/B0909.txt                                    1           9.000          24.870
+A/A0608.txt                                    1           9.000          33.732
+B/B0979.txt                                    1           9.000          43.097
+B/B0656.txt                                    1           9.000         206.000
+A/A0228.txt                                    1          10.000          12.967
+B/B0821.txt                                    1          10.000          24.870
+A/A0750.txt                                    1          10.000          33.732
+B/B0973.txt                                    1          10.000          43.097
+B/B0190.txt                                    1          10.000         207.000
+
+
+========================= Query:          E/E0853.txt ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+E/E0827.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0594.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0487.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0621.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0190.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0545.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0414.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0760.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/500                                    0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0150.txt                              0.000 bank_word-3grams_tf-idf_0.01-0.4.
+E/E0943.txt                              0.000 bank_BoW_TF_Thresh_1_40.arff     
+E/E0871.txt                              0.000 bank_BoW_TF_Thresh_1_40.arff     
+E/E0907.txt                              0.000 bank_BoW_TF_Thresh_1_40.arff     
+E/E0871.txt                              0.000 bank_BoW_Boolean_Thresh_1_40.arff
+E/E0907.txt                              0.000 bank_BoW_Boolean_Thresh_1_40.arff
+E/E0773.txt                              0.000 bank_BoW_Boolean_Thresh_1_40.arff
+E/E0943.txt                              0.000 bank_BoW_Boolean_Thresh_1_40.arff
+E/E0752.txt                              0.000 bank_BoW_Boolean_Thresh_1_40.arff
+E/E0871.txt                              0.000 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0907.txt                              0.000 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0943.txt                              0.000 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0907.txt                              0.000 bank_s_i_0.5_70.0_3_out.arff     
+E/E0943.txt                              0.000 bank_s_i_0.5_70.0_3_out.arff     
+E/E0752.txt                              0.024 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0773.txt                              0.024 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0752.txt                              0.262 bank_BoW_TF_Thresh_1_40.arff     
+E/E0773.txt                              0.262 bank_BoW_TF_Thresh_1_40.arff     
+E/E0871.txt                              0.513 bank_s_i_0.5_70.0_3_out.arff     
+E/E0752.txt                              0.815 bank_s_i_0.5_70.0_3_out.arff     
+E/E0642.txt                              0.973 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0594.txt                              0.973 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0773.txt                              1.328 bank_s_i_0.5_70.0_3_out.arff     
+E/E0698.txt                              1.963 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0631.txt                              2.009 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0559.txt                              2.023 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0621.txt                             17.291 bank_BoW_TF_Thresh_1_40.arff     
+E/500                                   17.291 bank_BoW_TF_Thresh_1_40.arff     
+B/B0689.txt                             18.291 bank_BoW_TF_Thresh_1_40.arff     
+A/A0773.txt                             18.291 bank_BoW_TF_Thresh_1_40.arff     
+A/A0128.txt                             18.291 bank_BoW_TF_Thresh_1_40.arff     
+B/B0973.txt                             31.890 bank_s_i_0.5_70.0_3_out.arff     
+A/A0750.txt                             31.926 bank_s_i_0.5_70.0_3_out.arff     
+A/A0195.txt                             31.926 bank_s_i_0.5_70.0_3_out.arff     
+B/B0733.txt                             31.926 bank_s_i_0.5_70.0_3_out.arff     
+B/B0625.txt                             31.926 bank_s_i_0.5_70.0_3_out.arff     
+E/E0621.txt                             41.000 bank_BoW_Boolean_Thresh_1_40.arff
+E/500                                   41.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0277.txt                             42.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0865.txt                             42.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0409.txt                             42.000 bank_BoW_Boolean_Thresh_1_40.arff
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+E/E0871.txt                                    4           1.750           0.128
+E/E0907.txt                                    4           2.000           0.000
+E/E0943.txt                                    4           2.500           0.000
+E/E0752.txt                                    4           4.250           0.275
+E/E0773.txt                                    4           4.500           0.403
+E/E0621.txt                                    3           5.333          19.430
+E/500                                          3           7.667          19.430
+E/E0594.txt                                    2           4.500           0.486
+E/E0827.txt                                    1           1.000           0.000
+E/E0487.txt                                    1           3.000           0.000
+E/E0190.txt                                    1           5.000           0.000
+E/E0545.txt                                    1           6.000           0.000
+E/E0642.txt                                    1           6.000           0.973
+B/B0973.txt                                    1           6.000          31.890
+E/E0414.txt                                    1           7.000           0.000
+A/A0750.txt                                    1           7.000          31.926
+E/E0760.txt                                    1           8.000           0.000
+E/E0698.txt                                    1           8.000           1.963
+B/B0689.txt                                    1           8.000          18.291
+A/A0195.txt                                    1           8.000          31.926
+B/B0277.txt                                    1           8.000          42.000
+E/E0631.txt                                    1           9.000           2.009
+A/A0773.txt                                    1           9.000          18.291
+B/B0733.txt                                    1           9.000          31.926
+A/A0865.txt                                    1           9.000          42.000
+E/E0150.txt                                    1          10.000           0.000
+E/E0559.txt                                    1          10.000           2.023
+A/A0128.txt                                    1          10.000          18.291
+B/B0625.txt                                    1          10.000          31.926
+A/A0409.txt                                    1          10.000          42.000
+
+
+========================= Query:          F/F0274.txt ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+F/F0118.txt                              4.208 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0720.txt                              4.423 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0258.txt                              4.758 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0607.txt                              4.758 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0147.txt                              4.758 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0468.txt                              4.758 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0297.txt                              4.758 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0975.txt                              4.758 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0521.txt                              4.758 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0497.txt                              4.758 bank_word-3grams_tf-idf_0.01-0.4.
+F/F0524.txt                              8.608 bank_s_i_0.5_70.0_3_out.arff     
+B/B0979.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+B/B0644.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+B/B0042.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+A/A0613.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+A/A0221.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+A/A0169.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+A/A0409.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+B/B0733.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+A/A0019.txt                              8.727 bank_s_i_0.5_70.0_3_out.arff     
+F/F0468.txt                             11.608 bank_word-2grams_tf-idf_0.01-0.4.
+F/500                                   11.715 bank_word-2grams_tf-idf_0.01-0.4.
+F/F0975.txt                             11.715 bank_word-2grams_tf-idf_0.01-0.4.
+F/F0497.txt                             11.850 bank_word-2grams_tf-idf_0.01-0.4.
+F/F0521.txt                             12.286 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0621.txt                             12.715 bank_word-2grams_tf-idf_0.01-0.4.
+E/E0150.txt                             12.715 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0536.txt                             12.715 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0392.txt                             12.715 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0195.txt                             12.715 bank_word-2grams_tf-idf_0.01-0.4.
+F/500                                   13.538 bank_BoW_TF_Thresh_1_40.arff     
+A/A0613.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+B/B0689.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+B/B0023.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+A/A0128.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+B/B0136.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+B/B0305.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+B/B0954.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+B/B0042.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+B/B0183.txt                             14.538 bank_BoW_TF_Thresh_1_40.arff     
+F/F0497.txt                             32.000 bank_BoW_Boolean_Thresh_1_40.arff
+F/500                                   36.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0023.txt                             37.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0536.txt                             37.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0865.txt                             37.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0183.txt                             37.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0689.txt                             37.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0440.txt                             37.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0703.txt                             37.000 bank_BoW_Boolean_Thresh_1_40.arff
+C/C0600.txt                             37.000 bank_BoW_Boolean_Thresh_1_40.arff
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+F/500                                          3           1.667          20.418
+F/F0497.txt                                    3           5.000          16.203
+F/F0468.txt                                    2           3.500           8.183
+A/A0613.txt                                    2           3.500          11.633
+B/B0023.txt                                    2           3.500          25.769
+B/B0689.txt                                    2           5.000          25.769
+F/F0975.txt                                    2           5.500           8.237
+A/A0536.txt                                    2           6.000          24.857
+B/B0042.txt                                    2           6.500          11.633
+F/F0521.txt                                    2           7.000           8.522
+B/B0183.txt                                    2           8.000          25.769
+F/F0118.txt                                    1           1.000           4.208
+F/F0524.txt                                    1           1.000           8.608
+F/F0720.txt                                    1           2.000           4.423
+B/B0979.txt                                    1           2.000           8.727
+F/F0258.txt                                    1           3.000           4.758
+B/B0644.txt                                    1           3.000           8.727
+F/F0607.txt                                    1           4.000           4.758
+F/F0147.txt                                    1           5.000           4.758
+A/A0128.txt                                    1           5.000          14.538
+A/A0865.txt                                    1           5.000          37.000
+A/A0221.txt                                    1           6.000           8.727
+E/E0621.txt                                    1           6.000          12.715
+B/B0136.txt                                    1           6.000          14.538
+F/F0297.txt                                    1           7.000           4.758
+A/A0169.txt                                    1           7.000           8.727
+E/E0150.txt                                    1           7.000          12.715
+B/B0305.txt                                    1           7.000          14.538
+A/A0409.txt                                    1           8.000           8.727
+B/B0954.txt                                    1           8.000          14.538
+A/A0440.txt                                    1           8.000          37.000
+B/B0733.txt                                    1           9.000           8.727
+A/A0392.txt                                    1           9.000          12.715
+A/A0703.txt                                    1           9.000          37.000
+A/A0019.txt                                    1          10.000           8.727
+A/A0195.txt                                    1          10.000          12.715
+C/C0600.txt                                    1          10.000          37.000
+
+
+========================= Query:          C/C0259.txt ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+C/C0974.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0676.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0786.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0668.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0076.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0714.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0615.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0297.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0350.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0491.txt                              8.869 bank_word-3grams_tf-idf_0.01-0.4.
+C/C0045.txt                             20.257 bank_s_i_0.5_70.0_3_out.arff     
+B/B0042.txt                             20.280 bank_s_i_0.5_70.0_3_out.arff     
+C/C0658.txt                             20.280 bank_s_i_0.5_70.0_3_out.arff     
+D/500                                   20.280 bank_s_i_0.5_70.0_3_out.arff     
+B/B0305.txt                             20.280 bank_s_i_0.5_70.0_3_out.arff     
+B/B0136.txt                             20.280 bank_s_i_0.5_70.0_3_out.arff     
+A/A0865.txt                             20.280 bank_s_i_0.5_70.0_3_out.arff     
+A/A0536.txt                             20.280 bank_s_i_0.5_70.0_3_out.arff     
+B/B0023.txt                             20.280 bank_s_i_0.5_70.0_3_out.arff     
+F/500                                   20.280 bank_s_i_0.5_70.0_3_out.arff     
+C/C0658.txt                             29.016 bank_BoW_TF_Thresh_1_40.arff     
+C/C0600.txt                             29.016 bank_BoW_TF_Thresh_1_40.arff     
+C/C0140.txt                             29.016 bank_BoW_TF_Thresh_1_40.arff     
+E/500                                   30.016 bank_BoW_TF_Thresh_1_40.arff     
+D/500                                   30.016 bank_BoW_TF_Thresh_1_40.arff     
+A/A0608.txt                             30.016 bank_BoW_TF_Thresh_1_40.arff     
+A/A0271.txt                             30.016 bank_BoW_TF_Thresh_1_40.arff     
+B/B0644.txt                             30.016 bank_BoW_TF_Thresh_1_40.arff     
+F/500                                   30.016 bank_BoW_TF_Thresh_1_40.arff     
+A/A0773.txt                             30.016 bank_BoW_TF_Thresh_1_40.arff     
+C/C0886.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0813.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0067.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0658.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0840.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0045.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0714.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0786.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0624.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0600.txt                             34.924 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0140.txt                            133.000 bank_BoW_Boolean_Thresh_1_40.arff
+C/C0658.txt                            133.000 bank_BoW_Boolean_Thresh_1_40.arff
+C/C0600.txt                            133.000 bank_BoW_Boolean_Thresh_1_40.arff
+E/E0621.txt                            134.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0136.txt                            134.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0680.txt                            134.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0649.txt                            134.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0821.txt                            134.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0625.txt                            134.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0221.txt                            134.000 bank_BoW_Boolean_Thresh_1_40.arff
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+C/C0658.txt                                    4           2.500          54.305
+C/C0600.txt                                    3           5.000          65.646
+C/C0140.txt                                    2           2.000          81.008
+C/C0045.txt                                    2           3.500          27.590
+D/500                                          2           4.500          25.148
+C/C0786.txt                                    2           5.500          21.896
+B/B0136.txt                                    2           5.500          77.140
+C/C0714.txt                                    2           6.500          21.896
+F/500                                          2           9.500          25.148
+C/C0974.txt                                    1           1.000           8.869
+C/C0886.txt                                    1           1.000          34.924
+C/C0676.txt                                    1           2.000           8.869
+B/B0042.txt                                    1           2.000          20.280
+C/C0813.txt                                    1           2.000          34.924
+C/C0067.txt                                    1           3.000          34.924
+C/C0668.txt                                    1           4.000           8.869
+E/500                                          1           4.000          30.016
+E/E0621.txt                                    1           4.000         134.000
+C/C0076.txt                                    1           5.000           8.869
+B/B0305.txt                                    1           5.000          20.280
+C/C0840.txt                                    1           5.000          34.924
+A/A0608.txt                                    1           6.000          30.016
+A/A0680.txt                                    1           6.000         134.000
+C/C0615.txt                                    1           7.000           8.869
+A/A0865.txt                                    1           7.000          20.280
+A/A0271.txt                                    1           7.000          30.016
+A/A0649.txt                                    1           7.000         134.000
+C/C0297.txt                                    1           8.000           8.869
+A/A0536.txt                                    1           8.000          20.280
+B/B0644.txt                                    1           8.000          30.016
+B/B0821.txt                                    1           8.000         134.000
+C/C0350.txt                                    1           9.000           8.869
+B/B0023.txt                                    1           9.000          20.280
+C/C0624.txt                                    1           9.000          34.924
+B/B0625.txt                                    1           9.000         134.000
+C/C0491.txt                                    1          10.000           8.869
+A/A0773.txt                                    1          10.000          30.016
+A/A0221.txt                                    1          10.000         134.000
+
+
+========================= Query:          D/D0615.txt ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+D/D0170.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0353.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0895.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0743.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0392.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0972.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0874.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0814.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0924.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0974.txt                              7.760 bank_word-3grams_tf-idf_0.01-0.4.
+D/D0867.txt                             38.192 bank_word-2grams_tf-idf_0.01-0.4.
+D/500                                   38.192 bank_word-2grams_tf-idf_0.01-0.4.
+D/D0785.txt                             38.192 bank_word-2grams_tf-idf_0.01-0.4.
+D/D0764.txt                             38.192 bank_word-2grams_tf-idf_0.01-0.4.
+D/D0497.txt                             38.192 bank_word-2grams_tf-idf_0.01-0.4.
+D/D0814.txt                             39.033 bank_word-2grams_tf-idf_0.01-0.4.
+D/D0772.txt                             39.033 bank_word-2grams_tf-idf_0.01-0.4.
+D/D0895.txt                             39.033 bank_word-2grams_tf-idf_0.01-0.4.
+D/D0835.txt                             39.033 bank_word-2grams_tf-idf_0.01-0.4.
+D/D0793.txt                             39.033 bank_word-2grams_tf-idf_0.01-0.4.
+D/500                                   40.800 bank_BoW_TF_Thresh_1_40.arff     
+A/A0703.txt                             41.800 bank_BoW_TF_Thresh_1_40.arff     
+E/500                                   41.800 bank_BoW_TF_Thresh_1_40.arff     
+A/A0796.txt                             41.800 bank_BoW_TF_Thresh_1_40.arff     
+A/A0195.txt                             41.800 bank_BoW_TF_Thresh_1_40.arff     
+A/A0440.txt                             41.800 bank_BoW_TF_Thresh_1_40.arff     
+A/A0584.txt                             41.800 bank_BoW_TF_Thresh_1_40.arff     
+B/B0733.txt                             41.800 bank_BoW_TF_Thresh_1_40.arff     
+B/B0821.txt                             41.800 bank_BoW_TF_Thresh_1_40.arff     
+B/B0625.txt                             41.800 bank_BoW_TF_Thresh_1_40.arff     
+D/D0849.txt                             92.498 bank_s_i_0.5_70.0_3_out.arff     
+B/B0291.txt                             99.331 bank_s_i_0.5_70.0_3_out.arff     
+C/C0500.txt                             99.397 bank_s_i_0.5_70.0_3_out.arff     
+B/B0617.txt                             99.517 bank_s_i_0.5_70.0_3_out.arff     
+D/D0351.txt                             99.976 bank_s_i_0.5_70.0_3_out.arff     
+D/D0321.txt                             99.976 bank_s_i_0.5_70.0_3_out.arff     
+D/D0139.txt                             99.976 bank_s_i_0.5_70.0_3_out.arff     
+D/D0703.txt                             99.976 bank_s_i_0.5_70.0_3_out.arff     
+F/F0709.txt                            100.000 bank_s_i_0.5_70.0_3_out.arff     
+C/C0407.txt                            100.031 bank_s_i_0.5_70.0_3_out.arff     
+D/D0849.txt                            397.000 bank_BoW_Boolean_Thresh_1_40.arff
+D/D0806.txt                            430.000 bank_BoW_Boolean_Thresh_1_40.arff
+D/500                                  432.000 bank_BoW_Boolean_Thresh_1_40.arff
+C/C0658.txt                            433.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0979.txt                            433.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0169.txt                            433.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0865.txt                            433.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0470.txt                            433.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0251.txt                            433.000 bank_BoW_Boolean_Thresh_1_40.arff
+B/B0733.txt                            433.000 bank_BoW_Boolean_Thresh_1_40.arff
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+D/500                                          3           2.000         170.331
+D/D0849.txt                                    2           1.000         244.749
+D/D0895.txt                                    2           5.500          23.396
+D/D0814.txt                                    2           7.000          23.396
+B/B0733.txt                                    2           9.000         237.400
+D/D0170.txt                                    1           1.000           7.760
+D/D0867.txt                                    1           1.000          38.192
+D/D0353.txt                                    1           2.000           7.760
+A/A0703.txt                                    1           2.000          41.800
+B/B0291.txt                                    1           2.000          99.331
+D/D0806.txt                                    1           2.000         430.000
+D/D0785.txt                                    1           3.000          38.192
+E/500                                          1           3.000          41.800
+C/C0500.txt                                    1           3.000          99.397
+D/D0743.txt                                    1           4.000           7.760
+D/D0764.txt                                    1           4.000          38.192
+A/A0796.txt                                    1           4.000          41.800
+B/B0617.txt                                    1           4.000          99.517
+C/C0658.txt                                    1           4.000         433.000
+D/D0392.txt                                    1           5.000           7.760
+D/D0497.txt                                    1           5.000          38.192
+A/A0195.txt                                    1           5.000          41.800
+D/D0351.txt                                    1           5.000          99.976
+B/B0979.txt                                    1           5.000         433.000
+D/D0972.txt                                    1           6.000           7.760
+A/A0440.txt                                    1           6.000          41.800
+D/D0321.txt                                    1           6.000          99.976
+A/A0169.txt                                    1           6.000         433.000
+D/D0874.txt                                    1           7.000           7.760
+D/D0772.txt                                    1           7.000          39.033
+A/A0584.txt                                    1           7.000          41.800
+D/D0139.txt                                    1           7.000          99.976
+A/A0865.txt                                    1           7.000         433.000
+D/D0703.txt                                    1           8.000          99.976
+B/B0470.txt                                    1           8.000         433.000
+D/D0924.txt                                    1           9.000           7.760
+D/D0835.txt                                    1           9.000          39.033
+B/B0821.txt                                    1           9.000          41.800
+F/F0709.txt                                    1           9.000         100.000
+A/A0251.txt                                    1           9.000         433.000
+D/D0974.txt                                    1          10.000           7.760
+D/D0793.txt                                    1          10.000          39.033
+B/B0625.txt                                    1          10.000          41.800
+C/C0407.txt                                    1          10.000         100.031
+
+
+========================= Query:          A/A0020.txt ==========================
+document                              distance index                            
+-------------------------------------+--------+---------------------------------
+A/A0773.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0740.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0390.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0696.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0504.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0546.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0489.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0040.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0796.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0717.txt                              6.714 bank_word-3grams_tf-idf_0.01-0.4.
+A/A0098.txt                             17.906 bank_BoW_TF_Thresh_1_40.arff     
+A/A0251.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0613.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0703.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0019.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0750.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0169.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0536.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0271.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0865.txt                             20.133 bank_BoW_TF_Thresh_1_40.arff     
+A/A0649.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0773.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0703.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0865.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0696.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0680.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0019.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0195.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0613.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+A/A0561.txt                             27.801 bank_word-2grams_tf-idf_0.01-0.4.
+C/C0574.txt                             46.638 bank_s_i_0.5_70.0_3_out.arff     
+B/B0042.txt                             46.680 bank_s_i_0.5_70.0_3_out.arff     
+B/B0689.txt                             46.680 bank_s_i_0.5_70.0_3_out.arff     
+F/500                                   46.680 bank_s_i_0.5_70.0_3_out.arff     
+B/B0625.txt                             46.680 bank_s_i_0.5_70.0_3_out.arff     
+B/B0277.txt                             46.680 bank_s_i_0.5_70.0_3_out.arff     
+B/B0324.txt                             46.680 bank_s_i_0.5_70.0_3_out.arff     
+B/B0733.txt                             46.680 bank_s_i_0.5_70.0_3_out.arff     
+A/A0195.txt                             46.680 bank_s_i_0.5_70.0_3_out.arff     
+A/A0169.txt                             46.680 bank_s_i_0.5_70.0_3_out.arff     
+A/A0098.txt                            108.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0277.txt                            135.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0446.txt                            158.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0174.txt                            195.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0128.txt                            196.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0019.txt                            196.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0251.txt                            196.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0392.txt                            196.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0865.txt                            196.000 bank_BoW_Boolean_Thresh_1_40.arff
+A/A0195.txt                            196.000 bank_BoW_Boolean_Thresh_1_40.arff
+
+document                                 #occur  avg rank        avg dist       
+----------------------------------------+-------+---------------+---------------
+A/A0019.txt                                    3           6.000          81.311
+A/A0865.txt                                    3           7.667          81.311
+A/A0195.txt                                    3           9.000          90.160
+A/A0098.txt                                    2           1.000          62.953
+A/A0773.txt                                    2           1.500          17.258
+A/A0703.txt                                    2           3.500          23.967
+A/A0696.txt                                    2           4.500          17.258
+A/A0251.txt                                    2           4.500         108.066
+A/A0613.txt                                    2           6.000          23.967
+A/A0169.txt                                    2           8.500          33.406
+A/A0649.txt                                    1           1.000          27.801
+C/C0574.txt                                    1           1.000          46.638
+A/A0740.txt                                    1           2.000           6.714
+B/B0042.txt                                    1           2.000          46.680
+A/A0277.txt                                    1           2.000         135.000
+A/A0390.txt                                    1           3.000           6.714
+B/B0689.txt                                    1           3.000          46.680
+A/A0446.txt                                    1           3.000         158.000
+F/500                                          1           4.000          46.680
+A/A0174.txt                                    1           4.000         195.000
+A/A0504.txt                                    1           5.000           6.714
+B/B0625.txt                                    1           5.000          46.680
+A/A0128.txt                                    1           5.000         196.000
+A/A0546.txt                                    1           6.000           6.714
+A/A0750.txt                                    1           6.000          20.133
+A/A0680.txt                                    1           6.000          27.801
+B/B0277.txt                                    1           6.000          46.680
+A/A0489.txt                                    1           7.000           6.714
+B/B0324.txt                                    1           7.000          46.680
+A/A0040.txt                                    1           8.000           6.714
+A/A0536.txt                                    1           8.000          20.133
+B/B0733.txt                                    1           8.000          46.680
+A/A0392.txt                                    1           8.000         196.000
+A/A0796.txt                                    1           9.000           6.714
+A/A0271.txt                                    1           9.000          20.133
+A/A0717.txt                                    1          10.000           6.714
+A/A0561.txt                                    1          10.000          27.801
