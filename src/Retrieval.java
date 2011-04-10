@@ -164,8 +164,8 @@ public class Retrieval {
     private SimilarityMeasure similarityMeasure = SimilarityMeasure.L1;
     private Attribute classAttribute = null;
     private Attribute documentAttribute = null;
-    @Option(name = "-q", aliases = {"--query"}, multiValued = true, required = false, usage = "the query to be used")
-    private List<String> queryWords;
+    @Option(name = "-q", aliases = {"--query"},  required = false, usage = "the query to be used")
+    private Boolean queryWords;
     
     public void query() throws Exception
     {
@@ -225,7 +225,7 @@ public class Retrieval {
             while (attributes.hasMoreElements()) {
                 Attribute attribute = (Attribute) attributes.nextElement();
 
-                for(String queryWord : queryWords)
+                for(String queryWord : queryDocuments)
                 {
                     if (attribute.name().matches(queryWord))
                     {
@@ -348,7 +348,7 @@ public class Retrieval {
     }
     
     public void run() throws Exception {
-        if(queryWords != null) {
+        if(queryWords != false) {
             query();
             return;
         }
