@@ -165,7 +165,7 @@ public class Retrieval {
     private Attribute classAttribute = null;
     private Attribute documentAttribute = null;
     @Option(name = "-q", aliases = {"--query"},  required = false, usage = "the query to be used")
-    private Boolean queryWords;
+    private Boolean queryWords = false;
     
     public void query() throws Exception
     {
