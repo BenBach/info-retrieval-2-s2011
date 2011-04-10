@@ -2,12 +2,17 @@ import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.converters.ConverterUtils;
 
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+
+<<<<<<<HEAD
 
 public class Retrieval {
     public enum SimilarityMeasure {
@@ -26,9 +31,39 @@ public class Retrieval {
             usage = "the similarity function to be used for similarity retrieval")
     private SimilarityMeasure similarityMeasure = SimilarityMeasure.L1;
 
-    public void run() {
+    public void run() throws Exception {
         setupIndices();
         printProgramStatus();
+
+        for (File dataPath : indicesUsed) {
+            System.out.println("\n\n-------- Dataset: " + dataPath + " ---------");
+
+            // Prepare Data
+            ConverterUtils.DataSource source = new ConverterUtils.DataSource(dataPath.getAbsolutePath());
+            Instances data = source.getDataSet();
+
+            if (data.classIndex() == -1) {
+                data.setClassIndex(data.numAttributes() - 1);
+            }
+
+            // run algorithms
+            System.out.println("--- Running Similarity function ---");
+
+            // experimentRunner()
+
+
+        }
+    }
+
+    public static void findkNearestDocuments(int k, Instances data) {
+        for (int c = 0; c < data.numInstances(); c++) {
+            Instance instance = data.instance(c);
+        }
+    }
+
+    public static void experimentRunner(weka.core.DistanceFunction distanceFunction, Instances data) {
+
+
     }
 
     private void setupIndices() {
@@ -61,7 +96,7 @@ public class Retrieval {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         Retrieval retrieval = new Retrieval();
         CmdLineParser parser = new CmdLineParser(retrieval);
         parser.setUsageWidth(80); // width of the error display area
