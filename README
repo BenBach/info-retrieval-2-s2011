@@ -1,0 +1,31 @@
+
+run with:
+    java -jar retrieval.jar
+
+options:
+    -i    index files
+              optional, multiple occurrences allowed.
+              the parameter is split on ",", furthermore the wildcards "*" and "?" are allowed.
+              if the parameter is omitted the current working directory is searched for ".arff" and ".arff.gz" files.
+    -k    the k parameter
+              optional, one occurrence max.
+              if the parameter is omitted the value 5 is used.
+    -m    the distance measure to be used (either L1 or L2)
+              optional, one occurrence max.
+              if the parameter is omitted the value L1 is used.
+    -q    the query (for the bonus exercise)
+              optional, multiple occurrences allowed.
+              if the parameter is omitted a normal document query is started.
+              if the parameter is given the retrieval with the query is started.
+    QUERIES
+          if -q is not used all remaining arguments are treated as documents for retrieval.
+
+it is advised that the JVM memory limit is increased with the "-Xmx" paramter (e.g. -Xmx2048M)
+
+example call for document retrieval:
+
+    java -jar retrieval.jar -i "arff/news_*grams*" -k 10 -m L2 comp.sys.ibm.pc.hardware/60539 soc.religion.christian/21697 soc.religion.christian/21784
+
+example call for document retrieval with query:
+
+    java -jar retrieval.jar -i "arff/news_*grams*" -q "word"
