@@ -78,8 +78,7 @@ public class Retrieval {
         Multimap<String, DocumentSimilarity> similarities = HashMultimap.create();
 
         for (File indexFile : indices) {
-            System.out.println("\n\n-------- Index: " + indexFile + " ---------");
-            ConverterUtils.DataSource source = new ConverterUtils.DataSource(indexFile.toURI().toURL().toString());
+            ConverterUtils.DataSource source = new ConverterUtils.DataSource(indexFile.getAbsolutePath());
             Instances indexInstances = source.getDataSet();
 
             Enumeration attributes = indexInstances.enumerateAttributes();
@@ -120,6 +119,8 @@ public class Retrieval {
                 documentVectors.add(instance);
             }
 
+            similarityMeasure.getDistanceFunction().setInstances(indexInstances);
+
             // calculate distance to all other documents in the index file
             instances = indexInstances.enumerateInstances();
             while (instances.hasMoreElements()) {
@@ -135,29 +136,29 @@ public class Retrieval {
                     double distance = similarityMeasure.getDistanceFunction().distance(queryInstance, instance);
 
                     similarities.put(queryInstanceName, new DocumentSimilarity(distance, queryInstanceName,
-                            instanceName, indexFile.toString()));
+                            instanceName, indexFile.getName()));
                 }
+
+                trimMatchesToSizeK(similarities);
             }
 
             trimMatchesToSizeK(similarities);
         }
 
-        trimMatchesToSizeK(similarities);
-
-        for (String queryDocument : similarities.keys()) {
+        for (String queryDocument : similarities.keySet()) {
             Collection<DocumentSimilarity> similarityCollection = similarities.get(queryDocument);
 
-            System.out.println("Matches for " + queryDocument);
+            System.out.println("\nMatches for " + queryDocument);
 
             for (DocumentSimilarity documentSimilarity : similarityCollection) {
-                System.out.println(String.format("%.10s %3.5d %.20s", documentSimilarity.getTargetDocument(),
+                System.out.println(String.format("%-40.40s % 15.5f %-33.33s", documentSimilarity.getTargetDocument(),
                         documentSimilarity.getDistance(), documentSimilarity.getIndex()));
             }
         }
     }
 
     private void trimMatchesToSizeK(Multimap<String, DocumentSimilarity> similarities) {
-        for (String queryDocument : similarities.keys()) {
+        for (String queryDocument : queryDocuments) {
             Collection<DocumentSimilarity> similarityCollection = similarities.get(queryDocument);
             List<DocumentSimilarity> similarityList = Lists.newArrayList(similarityCollection);
 
