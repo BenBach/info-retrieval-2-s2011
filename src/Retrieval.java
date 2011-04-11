@@ -340,12 +340,18 @@ public class Retrieval {
                 for (File index : indices) {
                     List<DocumentSimilarity> documentSimilarities = indexResults.get(index.getName());
 
+                    if (documentSimilarities == null) {
+                        System.err.println("No similarities for index " + index.getName());
+                        for (int j = 0; j < 42; j++) System.out.print(' ');
+                        continue;
+                    }
+
                     for (DocumentSimilarity documentSimilarity : documentSimilarities) {
                         documentToSimilarity.put(documentSimilarity.getTargetDocument(), documentSimilarity);
                     }
 
                     DocumentSimilarity similarity = documentSimilarities.get(i);
-                    System.out.print(String.format("%-30.30s %10.3f ", similarity.getTargetDocument(),
+                    System.out.print(String.format("%-30.30s %10.6f ", similarity.getTargetDocument(),
                             similarity.getDistance()));
                 }
 
@@ -384,6 +390,13 @@ public class Retrieval {
             for (DocumentStatistics stats : statistics.subList(0, Math.min(k * 5, statistics.size()))) {
                 System.out.println(String.format("%-40.40s %7d %15.3f %15.3f", stats.getDocument(),
                         stats.getNumberOfOccurrences(), stats.getAverageRank(), stats.getAverageDistance()));
+            }
+
+            for (DocumentStatistics stats : statistics.subList(Math.min(k * 5, statistics.size()), statistics.size())) {
+                if (stats.getNumberOfOccurrences() < indices.size()) {
+                    System.out.println(String.format("%-40.40s %7d %15.3f %15.3f", stats.getDocument(),
+                            stats.getNumberOfOccurrences(), stats.getAverageRank(), stats.getAverageDistance()));
+                }
             }
         }
     }
