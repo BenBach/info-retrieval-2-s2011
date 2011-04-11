@@ -208,34 +208,44 @@ public class Retrieval {
 
                 System.out.println();
             }
+            
+            System.out.println();
+            System.out.println();
+            System.out.println();
 
             System.out.println(String.format("\n%-40.40s %-7.7s %-15.15s %-15.15s", "document", "#occur", "avg rank",
-                    "avg dist"));
-            List<DocumentStatistics> statistics = Lists.newArrayList();
+            "avg dist"));
+    List<DocumentStatistics> statistics = Lists.newArrayList();
 
-            for (String document : documentToSimilarity.keySet()) 
-            {
-                Collection<DocumentSimilarity> documentSimilarities = documentToSimilarity.get(document);
-                DocumentStatistics stats = new DocumentStatistics(document);
+    for (String document : documentToSimilarity.keySet()) {
+        Collection<DocumentSimilarity> documentSimilarities = documentToSimilarity.get(document);
+        DocumentStatistics stats = new DocumentStatistics(document);
 
-                int occurrences = documentSimilarities.size();
-                int sumRank = 0;
-                double sumDistance = 0.0;
+        for (DocumentSimilarity documentSimilarity : documentSimilarities)
+            stats.addState(documentSimilarity.getRank(), documentSimilarity.getDistance());
 
-                for (DocumentSimilarity documentSimilarity : documentSimilarities) {
-                    sumRank += documentSimilarity.getRank();
-                    sumDistance += documentSimilarity.getDistance();
-                    stats.addState(documentSimilarity.getRank(), documentSimilarity.getDistance());
-                }
+        statistics.add(stats);
+    }
 
-                statistics.add(stats);
+    Collections.sort(statistics, new Comparator<DocumentStatistics>() {
+        @Override
+        public int compare(DocumentStatistics o1, DocumentStatistics o2) {
+            int result = Double.compare(o1.getAverageRank(), o2.getAverageRank());
 
-                double averageRank = sumRank / occurrences;
-                double averageDistance = sumDistance / occurrences;
+            if (result != 0.0) return result;
 
-                /*System.out.println(String.format("%-40.40s %7d %15.3f %15.3f", document, occurrences, averageRank,
-                        averageDistance));*/
-            }
+            result = Double.compare(o1.getAverageDistance(), o2.getAverageDistance());
+
+            if (result != 0.0) return result;
+
+            return o2.getNumberOfOccurrences() - o1.getNumberOfOccurrences();
+        }
+    });
+
+    for (DocumentStatistics stats : statistics.subList(0, Math.min(k * 5, statistics.size()))) {
+        System.out.println(String.format("%-40.40s %7d %15.3f %15.3f", stats.getDocument(),
+                stats.getNumberOfOccurrences(), stats.getAverageRank(), stats.getAverageDistance()));
+    }
         }
     }
 
