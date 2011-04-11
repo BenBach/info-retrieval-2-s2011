@@ -1,0 +1,46 @@
+subindex arff/news_*
+Used Filter NumericToBinary
+Used Filter NumericToBinary
+Used Filter NumericToBinary
+Used Filter NumericToBinary
+Used Filter NumericToBinary
+
+
+query: 0/0
+rank news_5grams_001_04_stm_stw.arff           news_BoW_Boolean_Thresh_1_40.arff         news_BoW_TFIDF_Thresh_1_40.arff           news_word-2grams_tf-idf_0.01-0.4.arff     news_word-3grams_tf-idf_0.01-0.4.arff     
+-----+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+-----------------------------------------+
+#  0 comp.os.ms-windows.misc/9987        1,000 sci.electronics/53569              34,612 comp.windows.x/68218                1,000 alt.atheism/54143                   0,514 alt.atheism/51219                   0,000 
+#  1 comp.os.ms-windows.misc/9983        1,000 comp.graphics/38853                34,785 rec.sport.baseball/104905           1,414 alt.atheism/54163                   0,625 alt.atheism/53142                   0,000 
+#  2 rec.sport.hockey/52630              1,625 comp.graphics/39078                35,426 sci.med/59367                       1,414 comp.os.ms-windows.misc/9941        1,000 alt.atheism/53143                   0,000 
+#  3 comp.graphics/38853                 2,318 comp.sys.mac.hardware/51892        36,986 talk.politics.misc/178690           1,414 comp.os.ms-windows.misc/9983        1,000 alt.atheism/53219                   0,000 
+#  4 rec.sport.hockey/53822              2,427 comp.graphics/38778                37,510 rec.sport.hockey/52630              1,658 comp.os.ms-windows.misc/9987        1,000 alt.atheism/53252                   0,000 
+
+
+
+
+document                                 #occur  avg rank        avg dist       
+alt.atheism/54163                              5          12,800           9,680
+sci.space/59848                                5         106,600           9,823
+comp.graphics/38853                            5         107,400           8,280
+rec.sport.hockey/52630                         5         119,400          10,016
+sci.med/59347                                  5         133,000           9,948
+alt.atheism/53645                              5         143,400          10,250
+rec.autos/103450                               5         150,400          10,171
+talk.politics.mideast/77390                    5         166,400          10,730
+talk.religion.misc/83441                       5         178,200          10,554
+comp.windows.x/67995                           5         181,800          10,832
+talk.religion.misc/84197                       5         197,600          10,554
+talk.politics.mideast/77270                    5         197,600          10,747
+talk.politics.mideast/76035                    5         202,600          10,865
+talk.politics.mideast/76075                    5         203,200          10,663
+talk.politics.mideast/77230                    5         208,000          10,214
+sci.crypt/15812                                5         210,400          10,447
+alt.atheism/53137                              5         211,400          10,643
+rec.motorcycles/105116                         5         211,400          11,000
+talk.politics.mideast/77364                    5         212,600           9,868
+rec.sport.hockey/52617                         5         214,400          11,033
+talk.politics.mideast/77817                    5         215,600          10,843
+talk.religion.misc/84147                       5         219,800          10,301
+sci.space/61174                                5         221,800          11,047
+talk.politics.mideast/77183                    5         227,400          10,877
+rec.autos/103352                               5         230,200          10,683
