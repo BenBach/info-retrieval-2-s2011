@@ -29,12 +29,12 @@ public class Retrieval {
     private SimilarityMeasure similarityMeasure = SimilarityMeasure.L1;
     private Attribute classAttribute = null;
     private Attribute documentAttribute = null;
-    @Option(name = "-q", aliases = {"--query"},  required = false, usage = "the query to be used")
+    @Option(name = "-q", aliases = {"--query"},  required = false, usage = "if a query should be used")
     private Boolean queryWords = false;
     
     public void query() throws Exception
     {
-    	setupIndices();
+		setupIndices();
 
         // index -> document -> similarity
         Map<String, Multimap<String, DocumentSimilarity>> similaritiesByIndex = Maps.newHashMap();
@@ -48,7 +48,7 @@ public class Retrieval {
             Instances indexInstances = source.getDataSet();
         	
 
-            Instance queryVektor = new Instance(indexInstances.numAttributes());
+            Instance queryVector = new Instance(indexInstances.numAttributes());
 
             Enumeration attributes = indexInstances.enumerateAttributes();
             while (attributes.hasMoreElements()) {
@@ -63,7 +63,7 @@ public class Retrieval {
                 if (documentAttribute == null && attribute.name().matches(".*[Dd]ocument.*"))
                 {
                     documentAttribute = attribute;
-                    queryVektor.setValue(attribute, "QUERY");
+                    queryVector.setValue(attribute, "QUERY");
                 }
 
                 if (documentAttribute != null && classAttribute != null) break;
@@ -84,7 +84,7 @@ public class Retrieval {
             
             
 
-            Instance queryVector = new Instance(indexInstances.numAttributes());
+            //Instance queryVector = new Instance(indexInstances.numAttributes());
 
             attributes = indexInstances.enumerateAttributes();
             while (attributes.hasMoreElements()) {
@@ -113,7 +113,7 @@ public class Retrieval {
 
 
 
-            documentVectors.add(queryVektor);
+            documentVectors.add(queryVector);
 
 
             similarityMeasure.getDistanceFunction().setInstances(indexInstances);
@@ -150,31 +150,37 @@ public class Retrieval {
 
         // build a table: query / index -> {similarity}
         Table<String, String, List<DocumentSimilarity>> table = HashBasedTable.create();
-        for (Map.Entry<String, DocumentSimilarity> stringDocumentSimilarityEntry : similaritiesByDocument.entries()) {
-            List<DocumentSimilarity> similarities = table.get(
-                    stringDocumentSimilarityEntry.getValue().getSourceDocument(),
-                    stringDocumentSimilarityEntry.getKey());
+        for (Map.Entry<String, Multimap<String, DocumentSimilarity>> indexToSimilarities : similaritiesByIndex.entrySet()) {
+            String column = indexToSimilarities.getKey();
 
-            if (similarities == null) {
-                similarities = Lists.newArrayList();
+            for (Map.Entry<String, DocumentSimilarity> queryToSimilarity : indexToSimilarities.getValue().entries()) {
+                String row = queryToSimilarity.getKey();
 
-                table.put(stringDocumentSimilarityEntry.getValue().getSourceDocument(),
-                        stringDocumentSimilarityEntry.getKey(), similarities);
+                List<DocumentSimilarity> similarities = table.get(row, column);
+
+                if (similarities == null) {
+                    similarities = Lists.newArrayList();
+                    table.put(row, column, similarities);
+                }
+
+                similarities.add(queryToSimilarity.getValue());
             }
-
-            similarities.add(stringDocumentSimilarityEntry.getValue());
         }
 
         // for each query
         for (String query : table.rowKeySet()) {
-            Map<String, DocumentStatistics> statistics = Maps.newHashMap();
+            BiMap<String, DocumentStatistics> statistics = HashBiMap.create();
+
             List<DocumentSimilarity> allSimilarities = Lists.newArrayList();
 
+            // for each index
             for (List<DocumentSimilarity> documentSimilarities : table.row(query).values()) {
-                allSimilarities.addAll(documentSimilarities);
+                Collections.sort(documentSimilarities);
 
-                for (int i = 0, documentSimilaritiesSize = documentSimilarities.size(); i < documentSimilaritiesSize;
-                     i++) {
+                allSimilarities.addAll(documentSimilarities);
+                int documentSimilaritiesSize = documentSimilarities.size();
+
+                for (int i = 0; i < documentSimilaritiesSize; i++) {
                     DocumentSimilarity documentSimilarity = documentSimilarities.get(i);
                     String name = documentSimilarity.getTargetDocument();
                     DocumentStatistics documentStatistics = statistics.get(name);
@@ -184,7 +190,7 @@ public class Retrieval {
                         statistics.put(name, documentStatistics);
                     }
 
-                    documentStatistics.addState(i, documentSimilarity.getDistance());
+                    documentStatistics.addState(i + 1, documentSimilarity.getDistance());
                 }
             }
 
