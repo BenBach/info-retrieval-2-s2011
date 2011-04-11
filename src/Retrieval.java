@@ -38,7 +38,7 @@ public class Retrieval {
     private boolean queryWords = false;
 
     public void query() throws Exception {
-    	setupIndices();
+        setupIndices();
 
         // index -> document -> similarity
         Map<String, Multimap<String, DocumentSimilarity>> similaritiesByIndex = Maps.newHashMap();
@@ -209,32 +209,42 @@ public class Retrieval {
                 System.out.println();
             }
 
+            System.out.println();
+            System.out.println();
+            System.out.println();
+
             System.out.println(String.format("\n%-40.40s %-7.7s %-15.15s %-15.15s", "document", "#occur", "avg rank",
                     "avg dist"));
             List<DocumentStatistics> statistics = Lists.newArrayList();
 
-            for (String document : documentToSimilarity.keySet()) 
-            {
+            for (String document : documentToSimilarity.keySet()) {
                 Collection<DocumentSimilarity> documentSimilarities = documentToSimilarity.get(document);
                 DocumentStatistics stats = new DocumentStatistics(document);
 
-                int occurrences = documentSimilarities.size();
-                int sumRank = 0;
-                double sumDistance = 0.0;
-
-                for (DocumentSimilarity documentSimilarity : documentSimilarities) {
-                    sumRank += documentSimilarity.getRank();
-                    sumDistance += documentSimilarity.getDistance();
+                for (DocumentSimilarity documentSimilarity : documentSimilarities)
                     stats.addState(documentSimilarity.getRank(), documentSimilarity.getDistance());
-                }
 
                 statistics.add(stats);
+            }
 
-                double averageRank = sumRank / occurrences;
-                double averageDistance = sumDistance / occurrences;
+            Collections.sort(statistics, new Comparator<DocumentStatistics>() {
+                @Override
+                public int compare(DocumentStatistics o1, DocumentStatistics o2) {
+                    int result = Double.compare(o1.getAverageRank(), o2.getAverageRank());
 
-                /*System.out.println(String.format("%-40.40s %7d %15.3f %15.3f", document, occurrences, averageRank,
-                        averageDistance));*/
+                    if (result != 0.0) return result;
+
+                    result = Double.compare(o1.getAverageDistance(), o2.getAverageDistance());
+
+                    if (result != 0.0) return result;
+
+                    return o2.getNumberOfOccurrences() - o1.getNumberOfOccurrences();
+                }
+            });
+
+            for (DocumentStatistics stats : statistics.subList(0, Math.min(k * 5, statistics.size()))) {
+                System.out.println(String.format("%-40.40s %7d %15.3f %15.3f", stats.getDocument(),
+                        stats.getNumberOfOccurrences(), stats.getAverageRank(), stats.getAverageDistance()));
             }
         }
     }
@@ -259,10 +269,12 @@ public class Retrieval {
             while (attributes.hasMoreElements()) {
                 Attribute attribute = (Attribute) attributes.nextElement();
 
-                if (classAttribute == null && attribute.name().matches(".*[Cc]lass.*"))
+                if (classAttribute == null && attribute.name().matches(".*[Cc]lass.*") &&
+                        (attribute.type() == Attribute.STRING || attribute.type() == Attribute.NOMINAL))
                     classAttribute = attribute;
 
-                if (documentAttribute == null && attribute.name().matches(".*[Dd]ocument.*"))
+                if (documentAttribute == null && attribute.name().matches(".*[Dd]ocument.*") &&
+                        attribute.type() == Attribute.STRING)
                     documentAttribute = attribute;
 
                 if (documentAttribute != null && classAttribute != null) break;
@@ -279,6 +291,10 @@ public class Retrieval {
                 System.err.println("Aborting");
                 System.exit(1);
             }
+
+            System.err.println("index " + indexFile.getName());
+            System.err.println("    class: " + classAttribute.name());
+            System.err.println("    document: " + documentAttribute.name());
 
             List<Instance> documentVectors = Lists.newLinkedList();
 
