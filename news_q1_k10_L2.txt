@@ -1,6 +1,4 @@
-subindex arff/news_word-*
-subindex arff/news_5*
-subindex arff/news_BoW*
+subindex arff/news*
 k                 : 10
 Similarity Measure: L2
 Used inidices:
