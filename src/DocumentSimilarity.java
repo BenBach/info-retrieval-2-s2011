@@ -5,23 +5,26 @@ import com.google.common.base.Objects;
 */
 public class DocumentSimilarity implements Comparable<DocumentSimilarity> {
     private double distance;
-    private String sourceDocument;
+    private int rank;
     private String targetDocument;
     private String index;
 
-    public DocumentSimilarity(double distance, String sourceDocument, String targetDocument, String index) {
+    public DocumentSimilarity(double distance, String targetDocument, String index) {
         this.distance = distance;
-        this.sourceDocument = sourceDocument;
         this.targetDocument = targetDocument;
         this.index = index;
     }
 
-    public double getDistance() {
-        return distance;
+    public int getRank() {
+        return rank;
     }
 
-    public String getSourceDocument() {
-        return sourceDocument;
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
+    public double getDistance() {
+        return distance;
     }
 
     public String getTargetDocument() {
@@ -39,7 +42,7 @@ public class DocumentSimilarity implements Comparable<DocumentSimilarity> {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(distance, sourceDocument, targetDocument, index);
+        return Objects.hashCode(distance, targetDocument, index);
     }
 
     @Override
@@ -49,7 +52,7 @@ public class DocumentSimilarity implements Comparable<DocumentSimilarity> {
         DocumentSimilarity other = (DocumentSimilarity) obj;
 
         return Objects.equal(distance, other.distance) &&
-                Objects.equal(sourceDocument, other.sourceDocument) &&
+                Objects.equal(rank, other.rank) &&
                 Objects.equal(targetDocument, other.targetDocument) &&
                 Objects.equal(index, other.index);
     }

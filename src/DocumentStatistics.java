@@ -6,16 +6,23 @@ import java.util.List;
 * @author patrick
 */
 public class DocumentStatistics implements Comparable<DocumentStatistics> {
+    private String document;
     private int numberOfOccurrences;
     private List<Integer> ranks;
     private List<Double> distances;
     private double averageRank = -1.0;
     private double averageDistance = -1.0;
 
-    public DocumentStatistics() {
+    public DocumentStatistics(String document)
+    {
+        this.document = document;
         numberOfOccurrences = 0;
         ranks = Lists.newArrayList();
         distances = Lists.newArrayList();
+    }
+
+    public String getDocument() {
+        return document;
     }
 
     public void addState(int rank, double distance) {
