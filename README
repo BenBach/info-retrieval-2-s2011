@@ -7,10 +7,10 @@ executable jar file:
 
 attribute detection
 --------------------------------------------------------------------------------
-the first attribute containing class/Class is used as class attribute
-the first attribute containing document/Document is used as document attribute
-if no attribute matching class/Class or document/Document is found the run is
-aborted.
+the first attribute containing class/Class that is of type string or nominal is
+used as class attribute. The first attribute containing document/Document that
+is of type string is used as document attribute. If no attribute matching
+class/Class or document/Document is found the run is aborted.
 
 options
 --------------------------------------------------------------------------------
@@ -46,4 +46,4 @@ example call for document retrieval:
 
 example call for document retrieval with query:
 
-    java -jar retrieval.jar -i "arff/news_*grams*" -q word1 word2
+    java -jar retrieval.jar -q -i "arff/news_*grams*" word1 word2
